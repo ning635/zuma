@@ -1,0 +1,24 @@
+{
+    "version": "1.0.1",
+    "data": {
+        "paths": [
+            "image",
+            "Prefab",
+            "Scene",
+            "Script",
+            "Script\\ZumaCurvePath.ts",
+            "image\\BackGround0.png",
+            "image\\blueball.png",
+            "image\\greenball.png",
+            "image\\purpleball.png",
+            "image\\redball.png",
+            "image\\yellowball.png",
+            "Prefab\\blueball.prefab",
+            "Prefab\\greenball.prefab",
+            "Prefab\\purpleball.prefab",
+            "Prefab\\redball.prefab",
+            "Prefab\\yellowball.prefab",
+            "Scene\\Map0.scene"
+        ]
+    }
+}

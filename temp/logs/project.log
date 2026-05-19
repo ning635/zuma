@@ -1,0 +1,300 @@
+19-5-2026 16:36:16 - log: Load engine in D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine
+19-5-2026 16:36:17 - log: Register native engine in D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\native
+19-5-2026 16:36:18 - log: Request namespace: device-list
+19-5-2026 16:36:26 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 16:36:35 - log: [Scene] meshopt wasm decoder initialized
+19-5-2026 16:36:35 - log: [Scene] [box2d]:box2d wasm lib loaded.
+19-5-2026 16:36:35 - log: [Scene] [bullet]:bullet wasm lib loaded.
+19-5-2026 16:36:36 - log: [Scene] [PHYSICS]: using builtin.
+19-5-2026 16:36:36 - log: [Scene] Cocos Creator v3.8.8
+19-5-2026 16:36:36 - log: [Scene] Using custom pipeline: Builtin
+19-5-2026 16:36:36 - log: [Scene] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 16:36:42 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 16:36:42 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 16:36:43 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 16:36:43 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 16:36:43 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 16:36:43 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 16:36:43 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 16:36:48 - warn: [PreviewInEditor] IPC message has been lost.Error: [PreviewInEditor] IPC message has been lost.
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at IpcRenderer.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\scene\dist\script\3d\manager\ipc\web\webview.ccc:1:1464)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)
+19-5-2026 16:36:48 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 16:36:48 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 16:36:48 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 16:36:48 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 16:36:48 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 16:36:49 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 16:36:49 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 16:36:49 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 16:38:13 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:18:21 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:18:21 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:18:21 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:18:21 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:18:21 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:18:21 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:18:21 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:19:29 - warn: [PreviewInEditor] IPC message has been lost.Error: [PreviewInEditor] IPC message has been lost.
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at IpcRenderer.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\scene\dist\script\3d\manager\ipc\web\webview.ccc:1:1464)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)
+19-5-2026 17:19:29 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:21:28 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:21:28 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:21:28 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:21:28 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:21:29 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:21:29 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:21:29 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:21:50 - warn: [PreviewInEditor] IPC message has been lost.Error: [PreviewInEditor] IPC message has been lost.
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at IpcRenderer.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\scene\dist\script\3d\manager\ipc\web\webview.ccc:1:1464)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)
+19-5-2026 17:21:50 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:41:17 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:41:17 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:41:17 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:41:17 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:41:17 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:41:17 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:41:17 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:41:31 - warn: [PreviewInEditor] IPC message has been lost.Error: [PreviewInEditor] IPC message has been lost.
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at IpcRenderer.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\scene\dist\script\3d\manager\ipc\web\webview.ccc:1:1464)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)
+19-5-2026 17:41:31 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:41:32 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:41:32 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:41:32 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:41:32 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:41:32 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:41:32 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:41:32 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:41:42 - warn: [PreviewInEditor] IPC message has been lost.Error: [PreviewInEditor] IPC message has been lost.
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at IpcRenderer.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\scene\dist\script\3d\manager\ipc\web\webview.ccc:1:1464)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)
+19-5-2026 17:41:42 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:42:05 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:42:05 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:42:05 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:42:05 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:42:05 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:42:05 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:42:05 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:42:30 - warn: [PreviewInEditor] IPC message has been lost.Error: [PreviewInEditor] IPC message has been lost.
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at IpcRenderer.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\scene\dist\script\3d\manager\ipc\web\webview.ccc:1:1464)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)
+19-5-2026 17:42:30 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:43:41 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:43:41 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:43:41 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:43:41 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:43:41 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:43:41 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:43:41 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:43:49 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:49:44 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:49:44 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:49:44 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:49:44 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:49:44 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:49:44 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:49:44 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:49:55 - warn: [PreviewInEditor] IPC message has been lost.Error: [PreviewInEditor] IPC message has been lost.
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at IpcRenderer.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\scene\dist\script\3d\manager\ipc\web\webview.ccc:1:1464)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)
+19-5-2026 17:49:55 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:49:55 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:49:55 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:49:55 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:49:56 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:49:56 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:49:56 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:49:56 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:50:01 - error: (node:16996) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 render-view-deleted listeners added to [WebContents]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `CocosCreator --trace-warnings ...` to show where the warning was created)
+19-5-2026 17:50:01 - error: (node:16996) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 new-window listeners added to [WebContents]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+19-5-2026 17:50:02 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:50:32 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:50:32 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:50:32 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:50:32 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:50:32 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:50:32 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:50:32 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:50:36 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:50:40 - warn: [Assets] 当前引擎模块配置内有部分模块 gfx-webgl×, gfx-webgl2× 在当前平台 windows 不支持，将会自动移除或者回退成其他模块Warn: [Assets] 当前引擎模块配置内有部分模块 gfx-webgl×, gfx-webgl2× 在当前平台 windows 不支持，将会自动移除或者回退成其他模块
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at NewConsole.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\asset-db\dist\worker\console.ccc:1:1637)
+    at warnModuleFallBack (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\share\utils.ccc:1:3336)
+    at checkProjectSetting (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\share\common-options-validator.ccc:1:8200)
+    at BuildTask.initOptions (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\worker\builder\index.ccc:1:9952)
+    at BuildTask.init (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\worker\builder\index.ccc:1:3382)
+    at BuildTask.getPreviewSettings (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\worker\builder\index.ccc:1:9314)
+    at getPreviewSettings (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\worker\index.ccc:1:6669)
+    at Ipc.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\worker\msg-util.ccc:1:210)
+19-5-2026 17:50:40 - warn: [Assets] 当前引擎模块配置内有部分模块 gfx-webgl×, gfx-webgl2× 在当前平台 windows 不支持，将会自动移除或者回退成其他模块Warn: [Assets] 当前引擎模块配置内有部分模块 gfx-webgl×, gfx-webgl2× 在当前平台 windows 不支持，将会自动移除或者回退成其他模块
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at NewConsole.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\asset-db\dist\worker\console.ccc:1:1637)
+    at warnModuleFallBack (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\share\utils.ccc:1:3336)
+    at checkProjectSetting (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\share\common-options-validator.ccc:1:8200)
+    at BuildTask.initOptions (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\worker\builder\index.ccc:1:9952)
+    at BuildTask.init (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\worker\builder\index.ccc:1:3382)
+    at BuildTask.getPreviewSettings (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\worker\builder\index.ccc:1:9314)
+    at getPreviewSettings (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\worker\index.ccc:1:6669)
+    at Ipc.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\builder\dist\worker\msg-util.ccc:1:210)
+19-5-2026 17:50:45 - log: 17:50:41 [DEBUG]: SCREEN DPI = 96, SCREEN SCALE = 1.00
+17:50:41 [DEBUG]: WORKAREA WIDTH 1912.00, HEIGHT 981.00
+17:50:41 [DEBUG]: FRAME SCALE = 1.00
+17:50:41 [DEBUG]: Project Config:
+17:50:41 [DEBUG]:     project dir: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\native\simulator\Release\
+17:50:41 [DEBUG]:     writable path: $(PROJDIR)\
+17:50:41 [DEBUG]:     script file: $(PROJDIR)\main.js
+17:50:41 [DEBUG]:     frame size: 852 x 393
+17:50:41 [DEBUG]:     frame scale: 1.00
+17:50:41 [DEBUG]:     show console: NO
+17:50:41 [DEBUG]:     write debug log: NO ()
+17:50:41 [DEBUG]:     listen: 
+17:50:41 [DEBUG]:     debugger: none
+17:50:41 [DEBUG]:     add searching path:
+17:50:41 [DEBUG]: 
+
+
+17:50:41 [DEBUG]: [WARNING]:not find lang
+17:50:41 [INFO]: Setup EGLConfig: depth [24] stencil [8] sampleBuffer [0] sampleCount [0]
+17:50:41 [DEBUG]: EGL context bounded to thread 67c157033351d7be
+17:50:41 [INFO]: GLES3 device initialized.
+17:50:41 [INFO]: RENDERER: PVRVFrame 10.8 - None (Host : Intel(R) Iris(R) Xe Graphics) (SDK Build: 18.1@5086772)
+17:50:41 [INFO]: VENDOR: Imagination Technologies (Host: Intel)
+17:50:41 [INFO]: VERSION: OpenGL ES 3.2 (Host : 4.6.0 - Build 32.0.101.7084)
+17:50:41 [INFO]: COMPRESSED_FORMATS: etc1 etc2 pvrtc astc 
+17:50:41 [INFO]: FRAMEBUFFER_FETCH: NONE
+17:50:41 [INFO]: MULTI_SAMPLE_RENDER_TO_TEXTURE: NONE
+17:50:41 [INFO]: Device validator enabled.
+17:50:41 [DEBUG]: D/ Initializing V8, version: 11.6.189.22
+
+17:50:41 [DEBUG]: D/ libuv version: 1.41.0
+
+17:50:41 [DEBUG]: D/ Number of interfaces: 13
+17:50:41 [DEBUG]: D/ Debugger listening..., visit [
+17:50:41 [DEBUG]: D/     devtools://devtools/bundled/js_app.html?v8only=true&ws=127.0.0.1:5086/00010002-0003-4004-8005-000600070008
+17:50:41 [DEBUG]: D/     devtools://devtools/bundled/js_app.html?v8only=true&ws=192.168.8.1:5086/00010002-0003-4004-8005-000600070008
+17:50:41 [DEBUG]: D/     devtools://devtools/bundled/js_app.html?v8only=true&ws=192.168.44.1:5086/00010002-0003-4004-8005-000600070008
+17:50:41 [DEBUG]: D/     devtools://devtools/bundled/js_app.html?v8only=true&ws=172.30.234.90:5086/00010002-0003-4004-8005-000600070008
+17:50:41 [DEBUG]: D/     devtools://devtools/bundled/js_app.html?v8only=true&ws=26.255.109.179:5086/00010002-0003-4004-8005-000600070008
+17:50:41 [DEBUG]: D/   ] in chrome browser to debug!
+17:50:41 [DEBUG]: D/ For help see https://nodejs.org/en/docs/inspector
+17:50:41 [INFO]: JS: injectWebAssembly ...
+17:50:41 [DEBUG]: In the constructor of HttpClient!
+17:50:41 [DEBUG]: iShow!
+17:50:41 [DEBUG]: EventBus[Engine] has no listener found!
+17:50:43 [DEBUG]: JS: httpHandler: http://192.168.44.1:7456/scripting/x/chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js
+17:50:45 [WARN]: JS: Failed to set shading scale, pipelineSceneData is invalid.
+17:50:45 [WARN]: JS: Read json failed: path: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\native\simulator\Release/gamecaches/cacheList.json message: Unexpected end of JSON input
+17:50:45 [DEBUG]: JS: [PHYSICS2D]: register box2d.
+17:50:45 [DEBUG]: EGL context bounded to thread a034b11dbdb0a6a4
+17:50:45 [INFO]: Device thread detached.
+17:50:45 [DEBUG]: JS: Cocos Creator v3.8.8
+17:50:45 [DEBUG]: JS: httpHandler: http://192.168.44.1:7456/scripting/x/chunks/6d/6d8fd2b0177941b032ddc0733af48a561fb60657.js
+17:50:45 [DEBUG]: JS: httpHandler: http://192.168.44.1:7456/scripting/x/chunks/cc/cc7dc1538b089e654e7d57153b79760b08da8680.js
+17:50:45 [DEBUG]: JS: httpHandler: http://192.168.44.1:7456/scripting/x/chunks/eb/ebec5d8a3563bc5ba4f18044261ff60b45cab63c.js
+17:50:45 [DEBUG]: JS: httpHandler: http://192.168.44.1:7456/scripting/x/chunks/f1/f12f418350a9d38f6e535bccb69b66be718cd3b9.js
+17:50:45 [DEBUG]: JS: httpHandler: http://192.168.44.1:7456/scripting/x/chunks/11/114e16375beb194f3d4cb7ceb803bf0703322771.js
+17:50:45 [DEBUG]: JS: httpHandler: http://192.168.44.1:7456/scripting/x/chunks/79/79c726a1a0043ebff66e1afe51ed28f9e56e885e.js
+17:50:45 [DEBUG]: JS: httpHandler: http://192.168.44.1:7456/scripting/x/chunks/ed/eddc6a8ae5e9888f27b914136952bfe55297ddcc.js
+17:50:45 [DEBUG]: JS: httpHa
+19-5-2026 17:50:49 - log: (Info) Hardware profile: None
+(Info) PVRVFrame version 10.8
+
+19-5-2026 17:50:49 - log: ndler: http://192.168.44.1:7456/scripting/x/chunks/6a/6a2d3088281856d72d72bc920f2a7b5013c2ca00.js
+17:50:45 [DEBUG]: JS: httpHandler: http://192.168.44.1:7456/scripting/x/chunks/6a/6a5019a719a9014c047e67aa1cf34453ab8392ce.js
+17:50:45 [DEBUG]: JS: Using custom pipeline: Builtin
+17:50:47 [INFO]: Shader 'internal/builtin-graphics|vs:vert|fs:frag' compilation succeeded.
+17:50:47 [INFO]: Shader 'for2d/builtin-sprite|sprite-vs:vert|sprite-fs:frag|CC_USE_EMBEDDED_ALPHA0|USE_TEXTURE1|IS_GRAY0' compilation succeeded.
+17:50:47 [INFO]: Shader 'util/profiler|profiler-vs:vert|profiler-fs:frag' compilation succeeded.
+17:50:49 [DEBUG]: HttpClient::destroyInstance begin
+17:50:49 [DEBUG]: HttpClient destructor
+17:50:49 [DEBUG]: HttpClient::destroyInstance() finished!
+17:50:49 [DEBUG]: D/ ScriptEngine::cleanup begin ...
+
+17:50:49 [DEBUG]: D/ GC begin ..., (js->native map) size: 1452
+
+17:50:49 [DEBUG]: D/ GC end ..., (js->native map) size: 402
+
+17:50:49 [DEBUG]: D/ GC begin ..., (js->native map) size: 402
+
+17:50:49 [DEBUG]: D/ GC end ..., (js->native map) size: 402
+
+17:50:49 [DEBUG]: D/ GC begin ..., (js->native map) size: 0
+
+17:50:49 [DEBUG]: D/ GC end ..., (js->native map) size: 0
+
+17:50:49 [DEBUG]: D/ ScriptEngine::cleanup end ...
+
+17:50:49 [DEBUG]: EGL context bounded to thread a034b11dbdb0a6a4
+
+19-5-2026 17:51:30 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:51:30 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:51:30 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:51:30 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:51:30 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:51:30 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:51:31 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:51:31 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:55:23 - warn: [PreviewInEditor] IPC message has been lost.Error: [PreviewInEditor] IPC message has been lost.
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at IpcRenderer.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\scene\dist\script\3d\manager\ipc\web\webview.ccc:1:1464)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)
+19-5-2026 17:55:24 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:55:24 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:55:24 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:55:24 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:55:24 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:55:24 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:55:24 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:55:24 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:55:27 - warn: [PreviewInEditor] IPC message has been lost.Error: [PreviewInEditor] IPC message has been lost.
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at IpcRenderer.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\scene\dist\script\3d\manager\ipc\web\webview.ccc:1:1464)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)
+19-5-2026 17:55:28 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 17:55:28 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 17:55:28 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 17:55:28 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 17:55:28 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 17:55:28 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 17:55:28 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 17:55:28 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 17:56:21 - info: [PreviewInEditor] 预览环境初始化完毕
+19-5-2026 18:06:17 - log: [PreviewInEditor] meshopt wasm decoder initialized
+19-5-2026 18:06:17 - log: [PreviewInEditor] [box2d]:box2d wasm lib loaded.
+19-5-2026 18:06:17 - log: [PreviewInEditor] [bullet]:bullet wasm lib loaded.
+19-5-2026 18:06:17 - log: [PreviewInEditor] [PHYSICS]: using builtin.
+19-5-2026 18:06:17 - log: [PreviewInEditor] Cocos Creator v3.8.8
+19-5-2026 18:06:17 - log: [PreviewInEditor] Using custom pipeline: Builtin
+19-5-2026 18:06:17 - log: [PreviewInEditor] [PHYSICS2D]: switch from builtin to box2d.
+19-5-2026 18:06:34 - warn: [PreviewInEditor] IPC message has been lost.Error: [PreviewInEditor] IPC message has been lost.
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at IpcRenderer.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\scene\dist\script\3d\manager\ipc\web\webview.ccc:1:1464)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)
+19-5-2026 18:06:34 - warn: [PreviewInEditor] IPC message has been lost.Error: [PreviewInEditor] IPC message has been lost.
+    at console.warn (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\node_modules\@sentry\core\src\utils-hoist\instrument\console.ts:40:14)
+    at IpcRenderer.<anonymous> (D:\software\cocos\ide\Creator\3.8.8\resources\app.asar\builtin\scene\dist\script\3d\manager\ipc\web\webview.ccc:1:1464)
+    at IpcRenderer.emit (node:events:519:28)
+    at Object.onMessage (node:electron/js2c/renderer_init:2:8837)
+19-5-2026 18:06:35 - info: [PreviewInEditor] 预览环境初始化完毕
