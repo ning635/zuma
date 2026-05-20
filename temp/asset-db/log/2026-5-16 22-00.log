@@ -1,410 +1,0 @@
-2026-5-16 22:00:36-log: Cannot access game frame or container.
-2026-5-16 22:00:38-debug: asset-db:require-engine-code (1688ms)
-2026-5-16 22:00:38-log: meshopt wasm decoder initialized
-2026-5-16 22:00:38-log: [bullet]:bullet wasm lib loaded.
-2026-5-16 22:00:38-log: [box2d]:box2d wasm lib loaded.
-2026-5-16 22:00:38-log: Using legacy pipeline
-2026-5-16 22:00:38-log: Forward render pipeline initialized.
-2026-5-16 22:00:38-debug: [Assets Memory track]: asset-db:worker-init: initEngine start:28.24MB, end 79.49MB, increase: 51.24MB
-2026-5-16 22:00:38-log: Cocos Creator v3.8.8
-2026-5-16 22:00:41-debug: [Assets Memory track]: asset-db:worker-init: initPlugin start:79.53MB, end 221.16MB, increase: 141.63MB
-2026-5-16 22:00:41-debug: asset-db:worker-init: initPlugin (3144ms)
-2026-5-16 22:00:41-debug: [Assets Memory track]: asset-db:worker-init start:28.23MB, end 221.28MB, increase: 193.05MB
-2026-5-16 22:00:41-debug: Run asset db hook programming:beforePreStart ...
-2026-5-16 22:00:41-debug: Run asset db hook engine-extends:beforePreStart success!
-2026-5-16 22:00:41-debug: Run asset db hook programming:beforePreStart success!
-2026-5-16 22:00:41-debug: Run asset db hook engine-extends:beforePreStart ...
-2026-5-16 22:00:44-debug: asset-db:worker-init (8068ms)
-2026-5-16 22:00:44-debug: asset-db-hook-programming-beforePreStart (2925ms)
-2026-5-16 22:00:44-debug: asset-db-hook-engine-extends-beforePreStart (2923ms)
-2026-5-16 22:00:45-debug: Preimport db assets success
-2026-5-16 22:00:45-debug: Preimport db internal success
-2026-5-16 22:00:45-debug: Run asset db hook programming:afterPreStart ...
-2026-5-16 22:00:45-debug: starting packer-driver...
-2026-5-16 22:00:46-debug: initialize scripting environment...
-2026-5-16 22:00:46-debug: [[Executor]] prepare before lock
-2026-5-16 22:00:46-debug: Set detail map pack:///resolution-detail-map.json: {}
-2026-5-16 22:00:46-debug: [[Executor]] prepare after unlock
-2026-5-16 22:00:46-debug: Run asset db hook programming:afterPreStart success!
-2026-5-16 22:00:46-debug: Run asset db hook engine-extends:afterPreStart success!
-2026-5-16 22:00:46-debug: [Assets Memory track]: asset-db:worker-init: preStart start:221.30MB, end 225.56MB, increase: 4.26MB
-2026-5-16 22:00:46-debug: Start up the 'internal' database...
-2026-5-16 22:00:46-debug: Run asset db hook engine-extends:afterPreStart ...
-2026-5-16 22:00:48-debug: asset-db-hook-programming-afterPreStart (2196ms)
-2026-5-16 22:00:48-debug: asset-db:worker-effect-data-processing (1530ms)
-2026-5-16 22:00:48-debug: asset-db-hook-engine-extends-afterPreStart (1531ms)
-2026-5-16 22:00:48-debug: Run asset db hook engine-extends:afterStartDB ...
-2026-5-16 22:00:49-debug: recompile effect.bin success
-2026-5-16 22:00:49-debug: Run asset db hook engine-extends:afterStartDB success!
-2026-5-16 22:00:49-debug: Start up the 'assets' database...
-2026-5-16 22:00:49-debug: asset-db:worker-effect-data-processing (1157ms)
-2026-5-16 22:00:49-debug: asset-db-hook-engine-extends-afterStartDB (1157ms)
-2026-5-16 22:00:49-debug: Run asset db hook engine-extends:afterStartDB ...
-2026-5-16 22:00:49-debug: recompile effect.bin success
-2026-5-16 22:00:49-debug: Run asset db hook engine-extends:afterStartDB success!
-2026-5-16 22:00:49-debug: lazy register asset handler text
-2026-5-16 22:00:49-debug: lazy register asset handler directory
-2026-5-16 22:00:49-debug: lazy register asset handler spine-data
-2026-5-16 22:00:49-debug: lazy register asset handler dragonbones
-2026-5-16 22:00:49-debug: lazy register asset handler dragonbones-atlas
-2026-5-16 22:00:49-debug: lazy register asset handler json
-2026-5-16 22:00:49-debug: lazy register asset handler terrain
-2026-5-16 22:00:49-debug: lazy register asset handler javascript
-2026-5-16 22:00:49-debug: lazy register asset handler *
-2026-5-16 22:00:49-debug: lazy register asset handler typescript
-2026-5-16 22:00:49-debug: lazy register asset handler scene
-2026-5-16 22:00:49-debug: lazy register asset handler prefab
-2026-5-16 22:00:49-debug: lazy register asset handler sprite-frame
-2026-5-16 22:00:49-debug: lazy register asset handler buffer
-2026-5-16 22:00:49-debug: lazy register asset handler tiled-map
-2026-5-16 22:00:49-debug: lazy register asset handler alpha-image
-2026-5-16 22:00:49-debug: lazy register asset handler image
-2026-5-16 22:00:49-debug: lazy register asset handler texture-cube
-2026-5-16 22:00:49-debug: lazy register asset handler texture
-2026-5-16 22:00:49-debug: lazy register asset handler erp-texture-cube
-2026-5-16 22:00:49-debug: lazy register asset handler texture-cube-face
-2026-5-16 22:00:49-debug: lazy register asset handler sign-image
-2026-5-16 22:00:49-debug: lazy register asset handler rt-sprite-frame
-2026-5-16 22:00:49-debug: lazy register asset handler gltf-mesh
-2026-5-16 22:00:49-debug: lazy register asset handler render-texture
-2026-5-16 22:00:49-debug: lazy register asset handler gltf-animation
-2026-5-16 22:00:49-debug: lazy register asset handler gltf-skeleton
-2026-5-16 22:00:49-debug: lazy register asset handler gltf-material
-2026-5-16 22:00:49-debug: lazy register asset handler gltf-embeded-image
-2026-5-16 22:00:49-debug: lazy register asset handler gltf-scene
-2026-5-16 22:00:49-debug: lazy register asset handler gltf
-2026-5-16 22:00:49-debug: lazy register asset handler material
-2026-5-16 22:00:49-debug: lazy register asset handler physics-material
-2026-5-16 22:00:49-debug: lazy register asset handler effect-header
-2026-5-16 22:00:49-debug: lazy register asset handler effect
-2026-5-16 22:00:49-debug: lazy register asset handler fbx
-2026-5-16 22:00:49-debug: lazy register asset handler animation-clip
-2026-5-16 22:00:49-debug: lazy register asset handler animation-graph
-2026-5-16 22:00:49-debug: lazy register asset handler animation-graph-variant
-2026-5-16 22:00:49-debug: lazy register asset handler animation-mask
-2026-5-16 22:00:49-debug: lazy register asset handler ttf-font
-2026-5-16 22:00:49-debug: lazy register asset handler bitmap-font
-2026-5-16 22:00:49-debug: lazy register asset handler particle
-2026-5-16 22:00:49-debug: lazy register asset handler sprite-atlas
-2026-5-16 22:00:49-debug: lazy register asset handler label-atlas
-2026-5-16 22:00:49-debug: lazy register asset handler audio-clip
-2026-5-16 22:00:49-debug: lazy register asset handler render-stage
-2026-5-16 22:00:49-debug: lazy register asset handler render-pipeline
-2026-5-16 22:00:49-debug: lazy register asset handler auto-atlas
-2026-5-16 22:00:49-debug: lazy register asset handler render-flow
-2026-5-16 22:00:49-debug: lazy register asset handler instantiation-skeleton
-2026-5-16 22:00:49-debug: lazy register asset handler instantiation-material
-2026-5-16 22:00:49-debug: lazy register asset handler instantiation-mesh
-2026-5-16 22:00:49-debug: lazy register asset handler instantiation-animation
-2026-5-16 22:00:49-debug: lazy register asset handler video-clip
-2026-5-16 22:00:49-debug: asset-db:worker-effect-data-processing (472ms)
-2026-5-16 22:00:49-debug: asset-db-hook-engine-extends-afterStartDB (472ms)
-2026-5-16 22:00:49-debug: asset-db:start-database (8318ms)
-2026-5-16 22:00:49-debug: asset-db:ready (18435ms)
-2026-5-16 22:00:49-debug: programming:execute-script (2ms)
-2026-5-16 22:00:49-debug: init worker message success
-2026-5-16 22:00:50-debug: [Build Memory track]: builder:worker-init start:223.96MB, end 231.45MB, increase: 7.48MB
-2026-5-16 22:00:50-debug: builder:worker-init (509ms)
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\Default-Particle.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default-video.mp4background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\primitives.fbx@17020background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default-terrain\default-layer-texture.jpgbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\bottom.jpgbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\Default-Particle.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default-terrain\default-layer-texture.jpg@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\back.jpgbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\left.jpgbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\bottom.jpg@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: Frame rate: 24 [{asset(1263d74c-8167-4928-91a6-4e2672411f47)}]
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\front.jpgbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\back.jpg@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\top.jpgbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\left.jpg@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\right.jpgbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\default-billboard-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\particles\builtin-billboard.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\front.jpg@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\default-clear-stencil.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\internal\builtin-clear-stencil.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\default-material-transparent.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\legacy\standard.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\default-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\legacy\standard.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\primitives.fbx@801ecbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\default-particle-gpu-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\particles\builtin-particle-gpu.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\top.jpg@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_cubemap\right.jpg@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\default-sprite-renderer-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\for2d\builtin-sprite-renderer.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\default-particle-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\particles\builtin-particle.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\default-spine-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\for2d\builtin-spine.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\default-trail-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\particles\builtin-particle-trail.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\primitives.fbx@2e76ebackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\missing-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\builtin-unlit.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\particle-add.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\particles\builtin-particle.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\ui-alpha-test-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\for2d\builtin-sprite.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\missing-effect-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\builtin-unlit.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\standard-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\builtin-standard.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\ui-graphics-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\internal\builtin-graphics.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\primitives.fbx@38fd2background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\ui-base-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\for2d\builtin-sprite.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\ui-sprite-gray-alpha-sep-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\for2d\builtin-sprite.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\ui-sprite-alpha-sep-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\for2d\builtin-sprite.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\Camera.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\ui-sprite-gray-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\for2d\builtin-sprite.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_materials\ui-sprite-material.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\for2d\builtin-sprite.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\primitives.fbx@40ecebackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\Terrain.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\builtin-deferred.rppbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\builtin-color-grading.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\pipeline\post-process\color-grading1.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\builtin-depth-of-field.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\pipeline\post-process\dof1.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\primitives.fbx@fc873background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\builtin-forward.rppbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\builtin-kawase-bloom.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\pipeline\post-process\bloom-kawase-dual.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\builtin-fsr.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\pipeline\post-process\fsr1.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\builtin-fxaa.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\pipeline\post-process\fxaa-hq1.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\primitives.fbx@8abdcbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\builtin-mipmap-bloom.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\pipeline\post-process\bloom-mipmap-blur.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\builtin-tone-mapping.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\pipeline\post-process\tone-mapping.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\post-process.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\pipeline\post-process.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.hdrbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: Start to convert asset {asset[d032ac98-05e1-4090-88bb-eb640dcb5fc1](d032ac98-05e1-4090-88bb-eb640dcb5fc1)}
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\primitives.fbx@a804abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\tonemap.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\pipeline\tonemap.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_renderpipeline\deferred-lighting.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-error: upgradeProperties: the library json of effect(D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\pipeline\deferred-lighting.effect) not found, upgrade skipped
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\atom.plistbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\atom.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\primitives.fbx@8d883background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\primitives.fbx@aae0fbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_btn_disabled.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\atom.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\atom.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_btn_normal.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\atom_new.plistbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.png@b47c0background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_btn_disabled.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_btn_disabled.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_btn_pressed.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: Convert assetD:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.hdr -> PNG success.
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_btn_pressed.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_btn_normal.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_btn_pressed.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_editbox_bg.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_btn_normal.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.hdr@b47c0background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_panel.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:09-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_progressbar.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.png@b47c0@74afdbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_editbox_bg.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_panel.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_editbox_bg.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_panel.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.png@b47c0@8fd34background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_progressbar.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_radio_button_off.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_progressbar.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_radio_button_on.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.png@b47c0@bb97fbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.png@b47c0@7d38fbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.png@b47c0@e9a6dbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_radio_button_off.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_radio_button_on.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_radio_button_off.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.png@b47c0@40c10background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_radio_button_on.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_progressbar_bg.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar_vertical_bg.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.hdr@b47c0@74afdbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar_bg.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.hdr@b47c0@8fd34background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar_vertical.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.hdr@b47c0@bb97fbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_progressbar_bg.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_progressbar_bg.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.hdr@b47c0@7d38fbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_sprite_splash.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar_vertical_bg.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.hdr@b47c0@e9a6dbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar_vertical_bg.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_skybox\default_skybox.hdr@b47c0@40c10background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar_bg.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar_bg.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_sprite.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar_vertical.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_toggle_checkmark.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_toggle_normal.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_scrollbar_vertical.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_sprite_splash.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_sprite_splash.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_toggle_disabled.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\builtin-reflection-probe-preview.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_toggle_normal.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_sprite.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_toggle_pressed.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_toggle_normal.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_sprite.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_toggle_checkmark.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_toggle_disabled.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\builtin-terrain.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_toggle_checkmark.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:10-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\builtin-standard.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\builtin-toon.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\builtin-unlit.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: {"isTrusted":true}
-2026-5-16 22:12:11-error: Error: ENOENT: no such file or directory, open 'D:\software\cocos\zuma\library\a3\a3cd009f-0ab0-420d-9278-b9fdab939bbc.json'
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\camera.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\directional-light.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\particle-system.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_toggle_pressed.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\light-probe.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_ui\default_toggle_pressed.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\reflection-probe.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\directional-light.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\scene-gizmo.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\camera.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\sphere-light.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\spot-light.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\light-probe.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\particle-system.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\webview.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\x.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\reflection-probe.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\sphere-light.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\physics\default-physics-material.pmtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\tools\debug-view-runtime-control.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\spot-light.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\y.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\tools\parsed-effect-info.jsonbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\webview.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\z.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\x.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\x.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\y.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\animation-graph\default.animgraphbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\animation-graph\ts-animation-graphbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\y.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\animation-clip\default.animbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\animation-mask\default.animaskbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\auto-atlas\default.pacbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\z.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\animation-graph-variant\default.animgraphvaribackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\gizmo\z.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\effect-header\chunkbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\effect\effect-surface.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\material\default.mtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\physics-material\default.pmtlbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\prefab\default.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\effect\default.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\label-atlas\default.labelatlasbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\render-pipeline\forward-pipeline.rppbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\render-pipeline\default.rppbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\render-texture\default.rtbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\scene\default.scenebackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\scene\scene-2d.scenebackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\render-pipeline\ts-render-stagebackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\terrain\default.terrainbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\render-pipeline\ts-render-pipelinebackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\render-texture\default.rt@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\scene\scene-quality.scenebackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\render-pipeline\ts-render-flowbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_file_content\typescript\tsbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-BoldItalic.fntbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Bold.fntbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Italic.fntbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Bold_0.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Italic_0.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Regular.fntbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-BoldItalic_0.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Regular_0.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Bold_0.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Bold_0.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Italic_0.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Italic_0.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-freetype\OpenSans-Bold.ttfbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-freetype\OpenSans-BoldItalic.ttfbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\2d\Camera.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-BoldItalic_0.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-BoldItalic_0.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Regular_0.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\3d\Capsule.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-bitmap\OpenSans-Regular_0.png@f9941background: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\3d\Cone.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-freetype\OpenSans-Italic.ttfbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\3d\Cube.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\3d\Plane.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\3d\Quad.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_fonts\builtin-freetype\OpenSans-Regular.ttfbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\3d\Sphere.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\effects\Particle System.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\light\Directional Light.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\3d\Torus.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\light\Light Probe Group.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\light\Point Light.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\light\Ranged Directional Light.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\light\Sphere Light.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\light\Spot Light.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\Button.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\Canvas.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\Graphics.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\EditBox.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\3d\Cylinder.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\light\Reflection Probe.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\Label.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\Layout.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\ParticleSystem2D.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\ProgressBar.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\RichText.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\Mask.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\pageView.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\Sprite.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\ScrollView.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\SpriteRenderer.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\TiledMap.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\Slider.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\SpriteSplash.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\Toggle.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\VideoPlayer.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\WebView.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\Widget.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\dependencies\textures\preintegrated-skin.pngbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\default_prefab\ui\ToggleContainer.prefabbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:11-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\advanced\car-paint.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:12-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\advanced\hair.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:12-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\advanced\glass.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:13-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\advanced\fabric.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:13-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\advanced\leaf.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:13-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\advanced\eye.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:14-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\advanced\simple-skin.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:14-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\advanced\sky.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:14-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\advanced\water.effectbackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:14-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\dependencies\textures\preintegrated-skin.png@6c48abackground: #aaff85; color: #000;color: #000;
-2026-5-16 22:12:14-debug: %cImport%c: D:\software\cocos\ide\Creator\3.8.8\resources\resources\3d\engine\editor\assets\effects\advanced\skin.effectbackground: #aaff85; color: #000;color: #000;

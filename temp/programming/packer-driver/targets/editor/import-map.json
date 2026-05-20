@@ -2,16 +2,21 @@
   "imports": {
     "cce:/internal/x/cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js",
     "cce:/internal/x/prerequisite-imports": "./chunks/6d/6d8fd2b0177941b032ddc0733af48a561fb60657.js",
-    "file:///D:/software/cocos/ide/Creator/3.8.8/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-dof-pass.ts": "./chunks/cc/cc7dc1538b089e654e7d57153b79760b08da8680.js",
-    "file:///D:/software/cocos/ide/Creator/3.8.8/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-pass.ts": "./chunks/eb/ebec5d8a3563bc5ba4f18044261ff60b45cab63c.js",
-    "file:///D:/software/cocos/ide/Creator/3.8.8/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-settings.ts": "./chunks/f1/f12f418350a9d38f6e535bccb69b66be718cd3b9.js",
-    "file:///D:/software/cocos/ide/Creator/3.8.8/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-types.ts": "./chunks/11/114e16375beb194f3d4cb7ceb803bf0703322771.js",
-    "file:///D:/software/cocos/ide/Creator/3.8.8/resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline.ts": "./chunks/79/79c726a1a0043ebff66e1afe51ed28f9e56e885e.js",
-    "file:///D:/software/cocos/ide/Creator/3.8.8/resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts": "./chunks/ed/eddc6a8ae5e9888f27b914136952bfe55297ddcc.js",
-    "file:///D:/software/cocos/zuma/assets/Script/ZumaCurvePath.ts": "./chunks/6a/6a2d3088281856d72d72bc920f2a7b5013c2ca00.js"
+    "file:///Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-dof-pass.ts": "./chunks/3a/3af2b99d9d250d0c94e80c615712be1d07b4cf47.js",
+    "file:///Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-pass.ts": "./chunks/4f/4fd3d121a4e148a0cab634e8b8fe61cad0fda6b5.js",
+    "file:///Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-settings.ts": "./chunks/87/87c4b5d58115ee6102b02680ea6b39d34083b342.js",
+    "file:///Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline-types.ts": "./chunks/13/13619a4d60fbb6416edf8ba7ec0b195f2fcda55a.js",
+    "file:///Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/resources/3d/engine/editor/assets/default_renderpipeline/builtin-pipeline.ts": "./chunks/86/86b8638a66ab4c727e439f4d8cdd7595bd7cb611.js",
+    "file:///Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents/Resources/resources/3d/engine/editor/assets/tools/debug-view-runtime-control.ts": "./chunks/9c/9c8e4ae02cd522e18faba9e72e8803c8bdb97382.js",
+    "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/BallCollision.ts": "./chunks/ad/ada23b974e8a065d1d231e26150813354d287256.js",
+    "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/Control.ts": "./chunks/cd/cda65b9e6f72cae1c3f34884ff9f44dd49019cc6.js",
+    "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/GameManager.ts": "./chunks/c8/c894512ce8a6cfa462f11d22741cfa106a4bcf07.js",
+    "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/ZumaCurvePath.ts": "./chunks/65/65e97a887766ba784868dea81cdcff394abe6ee9.js",
+    "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/ZumaGame.ts": "./chunks/a5/a54ca258776be9a7884ea68b5bf7badcd281874c.js",
+    "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/ball.ts": "./chunks/7f/7f57c611741db9429806bea2e6d32c3a8d3be737.js"
   },
   "scopes": {
-    "./chunks/6a/6a2d3088281856d72d72bc920f2a7b5013c2ca00.js": {
+    "./chunks/7f/7f57c611741db9429806bea2e6d32c3a8d3be737.js": {
       "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
     },
     "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js": {
@@ -63,42 +68,70 @@
       "__unresolved_8": "cce:/internal/x/cc-fu/2d",
       "__unresolved_9": "cce:/internal/x/cc-fu/sorting"
     },
-    "./chunks/ed/eddc6a8ae5e9888f27b914136952bfe55297ddcc.js": {
+    "./chunks/a5/a54ca258776be9a7884ea68b5bf7badcd281874c.js": {
       "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
     },
-    "./chunks/79/79c726a1a0043ebff66e1afe51ed28f9e56e885e.js": {
+    "./chunks/65/65e97a887766ba784868dea81cdcff394abe6ee9.js": {
       "__unresolved_0": "./chunks/6a/6a5019a719a9014c047e67aa1cf34453ab8392ce.js",
-      "__unresolved_1": "./chunks/11/114e16375beb194f3d4cb7ceb803bf0703322771.js",
+      "__unresolved_1": "./chunks/7f/7f57c611741db9429806bea2e6d32c3a8d3be737.js",
       "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
     },
-    "./chunks/11/114e16375beb194f3d4cb7ceb803bf0703322771.js": {
+    "./chunks/c8/c894512ce8a6cfa462f11d22741cfa106a4bcf07.js": {
       "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
     },
-    "./chunks/f1/f12f418350a9d38f6e535bccb69b66be718cd3b9.js": {
+    "./chunks/cd/cda65b9e6f72cae1c3f34884ff9f44dd49019cc6.js": {
       "__unresolved_0": "./chunks/6a/6a5019a719a9014c047e67aa1cf34453ab8392ce.js",
-      "__unresolved_1": "./chunks/11/114e16375beb194f3d4cb7ceb803bf0703322771.js",
+      "__unresolved_1": "./chunks/7f/7f57c611741db9429806bea2e6d32c3a8d3be737.js",
       "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
     },
-    "./chunks/eb/ebec5d8a3563bc5ba4f18044261ff60b45cab63c.js": {
+    "./chunks/ad/ada23b974e8a065d1d231e26150813354d287256.js": {
       "__unresolved_0": "./chunks/6a/6a5019a719a9014c047e67aa1cf34453ab8392ce.js",
-      "__unresolved_1": "./chunks/f1/f12f418350a9d38f6e535bccb69b66be718cd3b9.js",
+      "__unresolved_1": "./chunks/7f/7f57c611741db9429806bea2e6d32c3a8d3be737.js",
+      "__unresolved_2": "./chunks/65/65e97a887766ba784868dea81cdcff394abe6ee9.js",
+      "__unresolved_3": "./chunks/cd/cda65b9e6f72cae1c3f34884ff9f44dd49019cc6.js",
       "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
     },
-    "./chunks/cc/cc7dc1538b089e654e7d57153b79760b08da8680.js": {
+    "./chunks/9c/9c8e4ae02cd522e18faba9e72e8803c8bdb97382.js": {
+      "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
+    },
+    "./chunks/86/86b8638a66ab4c727e439f4d8cdd7595bd7cb611.js": {
       "__unresolved_0": "./chunks/6a/6a5019a719a9014c047e67aa1cf34453ab8392ce.js",
-      "__unresolved_1": "./chunks/f1/f12f418350a9d38f6e535bccb69b66be718cd3b9.js",
-      "__unresolved_2": "./chunks/eb/ebec5d8a3563bc5ba4f18044261ff60b45cab63c.js",
-      "__unresolved_3": "./chunks/79/79c726a1a0043ebff66e1afe51ed28f9e56e885e.js",
+      "__unresolved_1": "./chunks/13/13619a4d60fbb6416edf8ba7ec0b195f2fcda55a.js",
+      "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
+    },
+    "./chunks/13/13619a4d60fbb6416edf8ba7ec0b195f2fcda55a.js": {
+      "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
+    },
+    "./chunks/87/87c4b5d58115ee6102b02680ea6b39d34083b342.js": {
+      "__unresolved_0": "./chunks/6a/6a5019a719a9014c047e67aa1cf34453ab8392ce.js",
+      "__unresolved_1": "./chunks/13/13619a4d60fbb6416edf8ba7ec0b195f2fcda55a.js",
+      "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
+    },
+    "./chunks/4f/4fd3d121a4e148a0cab634e8b8fe61cad0fda6b5.js": {
+      "__unresolved_0": "./chunks/6a/6a5019a719a9014c047e67aa1cf34453ab8392ce.js",
+      "__unresolved_1": "./chunks/87/87c4b5d58115ee6102b02680ea6b39d34083b342.js",
+      "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
+    },
+    "./chunks/3a/3af2b99d9d250d0c94e80c615712be1d07b4cf47.js": {
+      "__unresolved_0": "./chunks/6a/6a5019a719a9014c047e67aa1cf34453ab8392ce.js",
+      "__unresolved_1": "./chunks/87/87c4b5d58115ee6102b02680ea6b39d34083b342.js",
+      "__unresolved_2": "./chunks/4f/4fd3d121a4e148a0cab634e8b8fe61cad0fda6b5.js",
+      "__unresolved_3": "./chunks/86/86b8638a66ab4c727e439f4d8cdd7595bd7cb611.js",
       "cc": "./chunks/93/93ba276ea7b26ffcdc433fab14afc1ed6f05647b.js"
     },
     "./chunks/6d/6d8fd2b0177941b032ddc0733af48a561fb60657.js": {
-      "__unresolved_0": "./chunks/cc/cc7dc1538b089e654e7d57153b79760b08da8680.js",
-      "__unresolved_1": "./chunks/eb/ebec5d8a3563bc5ba4f18044261ff60b45cab63c.js",
-      "__unresolved_2": "./chunks/f1/f12f418350a9d38f6e535bccb69b66be718cd3b9.js",
-      "__unresolved_3": "./chunks/11/114e16375beb194f3d4cb7ceb803bf0703322771.js",
-      "__unresolved_4": "./chunks/79/79c726a1a0043ebff66e1afe51ed28f9e56e885e.js",
-      "__unresolved_5": "./chunks/ed/eddc6a8ae5e9888f27b914136952bfe55297ddcc.js",
-      "__unresolved_6": "./chunks/6a/6a2d3088281856d72d72bc920f2a7b5013c2ca00.js"
+      "__unresolved_0": "./chunks/3a/3af2b99d9d250d0c94e80c615712be1d07b4cf47.js",
+      "__unresolved_1": "./chunks/4f/4fd3d121a4e148a0cab634e8b8fe61cad0fda6b5.js",
+      "__unresolved_10": "./chunks/a5/a54ca258776be9a7884ea68b5bf7badcd281874c.js",
+      "__unresolved_11": "./chunks/7f/7f57c611741db9429806bea2e6d32c3a8d3be737.js",
+      "__unresolved_2": "./chunks/87/87c4b5d58115ee6102b02680ea6b39d34083b342.js",
+      "__unresolved_3": "./chunks/13/13619a4d60fbb6416edf8ba7ec0b195f2fcda55a.js",
+      "__unresolved_4": "./chunks/86/86b8638a66ab4c727e439f4d8cdd7595bd7cb611.js",
+      "__unresolved_5": "./chunks/9c/9c8e4ae02cd522e18faba9e72e8803c8bdb97382.js",
+      "__unresolved_6": "./chunks/ad/ada23b974e8a065d1d231e26150813354d287256.js",
+      "__unresolved_7": "./chunks/cd/cda65b9e6f72cae1c3f34884ff9f44dd49019cc6.js",
+      "__unresolved_8": "./chunks/c8/c894512ce8a6cfa462f11d22741cfa106a4bcf07.js",
+      "__unresolved_9": "./chunks/65/65e97a887766ba784868dea81cdcff394abe6ee9.js"
     }
   }
 }

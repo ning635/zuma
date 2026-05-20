@@ -20,7 +20,7 @@
     "versionCode": 1
   },
   "9102359d-e335-410f-8054-cdeef04c80ca": {
-    "url": "db://assets/Script/ZumaCurvePath.ts",
+    "url": "db://assets/Script/ZumaGame.ts",
     "value": {},
     "versionCode": 1
   },
@@ -126,7 +126,10 @@
       "depends": [
         "3b56c91f-c7e2-43bd-9546-8ddbcbbad635@f9941"
       ],
-      "dependScripts": []
+      "dependScripts": [
+        "a87bb747-7320-45e7-b813-8563e5663a9a",
+        "fecac54b-a897-4adc-a48c-20de217c0978"
+      ]
     },
     "versionCode": 2
   },
@@ -145,7 +148,10 @@
       "depends": [
         "e2dbc300-41e3-4ad2-bac5-7201696c36f1@f9941"
       ],
-      "dependScripts": []
+      "dependScripts": [
+        "a87bb747-7320-45e7-b813-8563e5663a9a",
+        "fecac54b-a897-4adc-a48c-20de217c0978"
+      ]
     },
     "versionCode": 2
   },
@@ -173,7 +179,10 @@
       "depends": [
         "15791828-1511-4e35-8fbd-ab7832ca2918@f9941"
       ],
-      "dependScripts": []
+      "dependScripts": [
+        "a87bb747-7320-45e7-b813-8563e5663a9a",
+        "fecac54b-a897-4adc-a48c-20de217c0978"
+      ]
     },
     "versionCode": 2
   },
@@ -183,7 +192,10 @@
       "depends": [
         "b4c19037-38b3-47c3-85d9-3116e840b144@f9941"
       ],
-      "dependScripts": []
+      "dependScripts": [
+        "a87bb747-7320-45e7-b813-8563e5663a9a",
+        "fecac54b-a897-4adc-a48c-20de217c0978"
+      ]
     },
     "versionCode": 2
   },
@@ -193,7 +205,10 @@
       "depends": [
         "905cc37d-2231-4a82-a1a8-03cb861beba3@f9941"
       ],
-      "dependScripts": []
+      "dependScripts": [
+        "a87bb747-7320-45e7-b813-8563e5663a9a",
+        "fecac54b-a897-4adc-a48c-20de217c0978"
+      ]
     },
     "versionCode": 2
   },
@@ -239,6 +254,105 @@
         "bacc4bdc-d7cd-457a-a598-3c3886db72ee@6c48a"
       ]
     },
+    "versionCode": 1
+  },
+  "ba60efc0-dcd1-4d9b-a1fc-495b102b261d": {
+    "url": "db://assets/Scene/Map1.scene",
+    "value": {
+      "depends": [
+        "057fd5d8-92b4-4fd2-a19c-499722dcb9df",
+        "b2172737-b3d3-4abd-83f6-bc6f91dee69d",
+        "d925c92c-a136-49bc-ab29-e3f5c827f7ea",
+        "df9fdd9b-4f58-4df2-8b0d-7aecc9a6daac",
+        "82911afa-a713-4522-99c2-437f3fd9e61a",
+        "bacc4bdc-d7cd-457a-a598-3c3886db72ee@f9941",
+        "92077136-c226-46b5-94d9-ed887f98b269"
+      ],
+      "dependScripts": [
+        "c64bf015-7a97-457d-988f-b4b4b4f70ff0",
+        "795a00be-135e-4843-9e29-ce834c3c88a1",
+        "CC3eba29-7abb-723a-f7ab-ae275e2277e8"
+      ]
+    },
+    "versionCode": 2
+  },
+  "5686ac78-581b-4efd-8e68-f1f50b8b66f3": {
+    "url": "db://assets/Script/ZumaCurvePath.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "c64bf015-7a97-457d-988f-b4b4b4f70ff0": {
+    "url": "db://assets/Script/ZumaCurvePath.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "0f526de0-2a9a-49cf-a3a1-8fd54008aad2": {
+    "url": "db://assets/image/发射炮口.png",
+    "value": {},
+    "versionCode": 1
+  },
+  "0f526de0-2a9a-49cf-a3a1-8fd54008aad2@6c48a": {
+    "url": "db://assets/image/发射炮口.png@6c48a",
+    "value": {
+      "depends": [
+        "0f526de0-2a9a-49cf-a3a1-8fd54008aad2"
+      ]
+    },
+    "versionCode": 1
+  },
+  "453e4010-cb68-429d-b183-852f9e2f8f61": {
+    "url": "db://assets/image/Launcher.png",
+    "value": {
+      "depends": []
+    },
+    "versionCode": 1
+  },
+  "453e4010-cb68-429d-b183-852f9e2f8f61@6c48a": {
+    "url": "db://assets/image/Launcher.png@6c48a",
+    "value": {
+      "depends": [
+        "453e4010-cb68-429d-b183-852f9e2f8f61"
+      ]
+    },
+    "versionCode": 1
+  },
+  "453e4010-cb68-429d-b183-852f9e2f8f61@f9941": {
+    "url": "db://assets/image/Launcher.png@f9941",
+    "value": {
+      "depends": [
+        "453e4010-cb68-429d-b183-852f9e2f8f61@6c48a"
+      ]
+    },
+    "versionCode": 1
+  },
+  "92077136-c226-46b5-94d9-ed887f98b269": {
+    "url": "db://assets/Prefab/Launcher.prefab",
+    "value": {
+      "depends": [
+        "453e4010-cb68-429d-b183-852f9e2f8f61@f9941"
+      ],
+      "dependScripts": []
+    },
+    "versionCode": 2
+  },
+  "795a00be-135e-4843-9e29-ce834c3c88a1": {
+    "url": "db://assets/Script/Control.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "a87bb747-7320-45e7-b813-8563e5663a9a": {
+    "url": "db://assets/Script/BallCollision.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "fecac54b-a897-4adc-a48c-20de217c0978": {
+    "url": "db://assets/Script/ball.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "5c7f2d12-1cde-45a1-bfb6-95c80821b790": {
+    "url": "db://assets/Script/GameManager.ts",
+    "value": {},
     "versionCode": 1
   }
 }
