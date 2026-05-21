@@ -23,10 +23,17 @@
             "image/BackGround0.png",
             "image/Launcher.png",
             "image/blueball.png",
+            "image/button.png",
+            "image/color.png",
             "image/greenball.png",
             "image/purpleball.png",
             "image/redball.png",
-            "image/yellowball.png"
+            "image/yellowball.png",
+            "image/BackGround1.png",
+            "Scene/Menu.scene",
+            "image/Pyramid Zuma.png",
+            "image/button1.png",
+            "Script/SceneLoader.ts"
         ]
     }
 }

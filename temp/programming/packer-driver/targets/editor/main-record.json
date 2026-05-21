@@ -1,7 +1,7 @@
 {
   "modules": {
     "cce:/internal/x/cc": {
-      "mTimestamp": 4054.026166,
+      "mTimestamp": 4079.157,
       "chunkId": "93ba276ea7b26ffcdc433fab14afc1ed6f05647b",
       "imports": [
         {
@@ -997,7 +997,7 @@
       ]
     },
     "cce:/internal/x/prerequisite-imports": {
-      "mTimestamp": 2908389.091333,
+      "mTimestamp": 6465388.06025,
       "chunkId": "6d8fd2b0177941b032ddc0733af48a561fb60657",
       "imports": [
         {
@@ -1127,7 +1127,7 @@
           }
         },
         {
-          "value": "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/ZumaCurvePath.ts",
+          "value": "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/SceneLoader.ts",
           "resolved": "__unresolved_9",
           "loc": {
             "start": {
@@ -1136,35 +1136,49 @@
             },
             "end": {
               "line": 5,
-              "column": 1406
+              "column": 1404
+            }
+          }
+        },
+        {
+          "value": "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/ZumaCurvePath.ts",
+          "resolved": "__unresolved_10",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 1420
+            },
+            "end": {
+              "line": 5,
+              "column": 1493
             }
           }
         },
         {
           "value": "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/ZumaGame.ts",
-          "resolved": "__unresolved_10",
+          "resolved": "__unresolved_11",
           "loc": {
             "start": {
               "line": 5,
-              "column": 1422
+              "column": 1509
             },
             "end": {
               "line": 5,
-              "column": 1490
+              "column": 1577
             }
           }
         },
         {
           "value": "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/ball.ts",
-          "resolved": "__unresolved_11",
+          "resolved": "__unresolved_12",
           "loc": {
             "start": {
               "line": 5,
-              "column": 1506
+              "column": 1593
             },
             "end": {
               "line": 5,
-              "column": 1570
+              "column": 1657
             }
           }
         }
@@ -1231,6 +1245,13 @@
           "resolved": {
             "type": "module",
             "url": "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/GameManager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/SceneLoader.ts"
           },
           "messages": []
         },
@@ -1820,7 +1841,7 @@
       ]
     },
     "cce:/internal/code-quality/cr.mjs": {
-      "mTimestamp": 1779259368848,
+      "mTimestamp": 1779371447677,
       "chunkId": "6a5019a719a9014c047e67aa1cf34453ab8392ce",
       "imports": [],
       "type": "esm",
@@ -2442,7 +2463,7 @@
     },
     "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/ZumaCurvePath.ts": {
       "mTimestamp": {
-        "mtime": 1779262274742.9832,
+        "mtime": 1779279097116.8845,
         "uuid": "c64bf015-7a97-457d-988f-b4b4b4f70ff0"
       },
       "chunkId": "65e97a887766ba784868dea81cdcff394abe6ee9",
@@ -2471,15 +2492,29 @@
           }
         },
         {
-          "value": "./ball",
+          "value": "./GameManager",
           "resolved": "__unresolved_1",
           "loc": {
             "start": {
               "line": 2,
-              "column": 21
+              "column": 28
             },
             "end": {
               "line": 2,
+              "column": 43
+            }
+          }
+        },
+        {
+          "value": "./ball",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 21
+            },
+            "end": {
+              "line": 3,
               "column": 29
             }
           }
@@ -2512,6 +2547,13 @@
           "resolved": {
             "type": "module",
             "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/GameManager.ts"
           },
           "messages": []
         },
@@ -2682,7 +2724,7 @@
     },
     "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/Control.ts": {
       "mTimestamp": {
-        "mtime": 1779255942895.7163,
+        "mtime": 1779275960497.9116,
         "uuid": "795a00be-135e-4843-9e29-ce834c3c88a1"
       },
       "chunkId": "cda65b9e6f72cae1c3f34884ff9f44dd49019cc6",
@@ -2766,7 +2808,7 @@
     },
     "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/BallCollision.ts": {
       "mTimestamp": {
-        "mtime": 1779257476832.0623,
+        "mtime": 1779276460268.0498,
         "uuid": "a87bb747-7320-45e7-b813-8563e5663a9a"
       },
       "chunkId": "ada23b974e8a065d1d231e26150813354d287256",
@@ -2944,7 +2986,7 @@
     },
     "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/GameManager.ts": {
       "mTimestamp": {
-        "mtime": 1779258841925.6125,
+        "mtime": 1779373208140.0896,
         "uuid": "5c7f2d12-1cde-45a1-bfb6-95c80821b790"
       },
       "chunkId": "c894512ce8a6cfa462f11d22741cfa106a4bcf07",
@@ -2960,11 +3002,63 @@
           "loc": {
             "start": {
               "line": 1,
-              "column": 60
+              "column": 67
             },
             "end": {
               "line": 1,
-              "column": 64
+              "column": 71
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///Users/xiejianfeng/Downloads/Zuma/assets/Script/SceneLoader.ts": {
+      "mTimestamp": {
+        "mtime": 1779377912592.9465,
+        "uuid": "f20e8156-3036-4b64-a53e-2bc55c908de5"
+      },
+      "chunkId": "d6996f88f5876a1e5567ff6c873a1506fbef5c85",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 54
+            },
+            "end": {
+              "line": 1,
+              "column": 58
             }
           }
         }

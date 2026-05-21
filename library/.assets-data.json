@@ -260,18 +260,24 @@
     "url": "db://assets/Scene/Map1.scene",
     "value": {
       "depends": [
+        "bacc4bdc-d7cd-457a-a598-3c3886db72ee@f9941",
+        "92077136-c226-46b5-94d9-ed887f98b269",
         "057fd5d8-92b4-4fd2-a19c-499722dcb9df",
         "b2172737-b3d3-4abd-83f6-bc6f91dee69d",
         "d925c92c-a136-49bc-ab29-e3f5c827f7ea",
         "df9fdd9b-4f58-4df2-8b0d-7aecc9a6daac",
         "82911afa-a713-4522-99c2-437f3fd9e61a",
-        "bacc4bdc-d7cd-457a-a598-3c3886db72ee@f9941",
-        "92077136-c226-46b5-94d9-ed887f98b269"
+        "74999791-c699-4c70-b6ac-3e87bab28e50@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "853c0c50-a4a7-460d-9193-aa6234c4b324@f9941"
       ],
       "dependScripts": [
-        "c64bf015-7a97-457d-988f-b4b4b4f70ff0",
         "795a00be-135e-4843-9e29-ce834c3c88a1",
-        "CC3eba29-7abb-723a-f7ab-ae275e2277e8"
+        "c64bf015-7a97-457d-988f-b4b4b4f70ff0",
+        "CC3eba29-7abb-723a-f7ab-ae275e2277e8",
+        "5c7f2d12-1cde-45a1-bfb6-95c80821b790"
       ]
     },
     "versionCode": 2
@@ -352,6 +358,153 @@
   },
   "5c7f2d12-1cde-45a1-bfb6-95c80821b790": {
     "url": "db://assets/Script/GameManager.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "853c0c50-a4a7-460d-9193-aa6234c4b324": {
+    "url": "db://assets/image/color.png",
+    "value": {
+      "depends": []
+    },
+    "versionCode": 1
+  },
+  "853c0c50-a4a7-460d-9193-aa6234c4b324@6c48a": {
+    "url": "db://assets/image/color.png@6c48a",
+    "value": {
+      "depends": [
+        "853c0c50-a4a7-460d-9193-aa6234c4b324"
+      ]
+    },
+    "versionCode": 1
+  },
+  "853c0c50-a4a7-460d-9193-aa6234c4b324@f9941": {
+    "url": "db://assets/image/color.png@f9941",
+    "value": {
+      "depends": [
+        "853c0c50-a4a7-460d-9193-aa6234c4b324@6c48a"
+      ]
+    },
+    "versionCode": 1
+  },
+  "74999791-c699-4c70-b6ac-3e87bab28e50": {
+    "url": "db://assets/image/button.png",
+    "value": {
+      "depends": []
+    },
+    "versionCode": 1
+  },
+  "74999791-c699-4c70-b6ac-3e87bab28e50@6c48a": {
+    "url": "db://assets/image/button.png@6c48a",
+    "value": {
+      "depends": [
+        "74999791-c699-4c70-b6ac-3e87bab28e50"
+      ]
+    },
+    "versionCode": 1
+  },
+  "74999791-c699-4c70-b6ac-3e87bab28e50@f9941": {
+    "url": "db://assets/image/button.png@f9941",
+    "value": {
+      "depends": [
+        "74999791-c699-4c70-b6ac-3e87bab28e50@6c48a"
+      ]
+    },
+    "versionCode": 1
+  },
+  "c9ac54a4-c315-48cf-86f2-1be01ffd42c7": {
+    "url": "db://assets/image/BackGround1.png",
+    "value": {
+      "depends": []
+    },
+    "versionCode": 1
+  },
+  "c9ac54a4-c315-48cf-86f2-1be01ffd42c7@6c48a": {
+    "url": "db://assets/image/BackGround1.png@6c48a",
+    "value": {
+      "depends": [
+        "c9ac54a4-c315-48cf-86f2-1be01ffd42c7"
+      ]
+    },
+    "versionCode": 1
+  },
+  "c9ac54a4-c315-48cf-86f2-1be01ffd42c7@f9941": {
+    "url": "db://assets/image/BackGround1.png@f9941",
+    "value": {
+      "depends": [
+        "c9ac54a4-c315-48cf-86f2-1be01ffd42c7@6c48a"
+      ]
+    },
+    "versionCode": 1
+  },
+  "d36cebc6-e124-4496-9a8f-f87ce9fb39ec": {
+    "url": "db://assets/Scene/Menu.scene",
+    "value": {
+      "depends": [
+        "c9ac54a4-c315-48cf-86f2-1be01ffd42c7@f9941",
+        "590033e5-7be4-4dde-aac3-d262b7b0d7ec@f9941",
+        "7a8d6202-d732-4951-9334-6a2b1d7b60e4@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941"
+      ],
+      "dependScripts": [
+        "f20e8156-3036-4b64-a53e-2bc55c908de5"
+      ]
+    },
+    "versionCode": 2
+  },
+  "590033e5-7be4-4dde-aac3-d262b7b0d7ec": {
+    "url": "db://assets/image/Pyramid Zuma.png",
+    "value": {
+      "depends": []
+    },
+    "versionCode": 1
+  },
+  "590033e5-7be4-4dde-aac3-d262b7b0d7ec@6c48a": {
+    "url": "db://assets/image/Pyramid Zuma.png@6c48a",
+    "value": {
+      "depends": [
+        "590033e5-7be4-4dde-aac3-d262b7b0d7ec"
+      ]
+    },
+    "versionCode": 1
+  },
+  "590033e5-7be4-4dde-aac3-d262b7b0d7ec@f9941": {
+    "url": "db://assets/image/Pyramid Zuma.png@f9941",
+    "value": {
+      "depends": [
+        "590033e5-7be4-4dde-aac3-d262b7b0d7ec@6c48a"
+      ]
+    },
+    "versionCode": 1
+  },
+  "7a8d6202-d732-4951-9334-6a2b1d7b60e4": {
+    "url": "db://assets/image/button1.png",
+    "value": {
+      "depends": []
+    },
+    "versionCode": 1
+  },
+  "7a8d6202-d732-4951-9334-6a2b1d7b60e4@6c48a": {
+    "url": "db://assets/image/button1.png@6c48a",
+    "value": {
+      "depends": [
+        "7a8d6202-d732-4951-9334-6a2b1d7b60e4"
+      ]
+    },
+    "versionCode": 1
+  },
+  "7a8d6202-d732-4951-9334-6a2b1d7b60e4@f9941": {
+    "url": "db://assets/image/button1.png@f9941",
+    "value": {
+      "depends": [
+        "7a8d6202-d732-4951-9334-6a2b1d7b60e4@6c48a"
+      ]
+    },
+    "versionCode": 1
+  },
+  "f20e8156-3036-4b64-a53e-2bc55c908de5": {
+    "url": "db://assets/Script/SceneLoader.ts",
     "value": {},
     "versionCode": 1
   }

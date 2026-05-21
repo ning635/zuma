@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, input, Input, EventMouse, Collider2D, Vec3, Camera, Graphics, Color, UITransform, Node, Prefab, instantiate, director, ball, _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _crd, ccclass, property, control;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, input, Input, EventMouse, Collider2D, Vec3, Camera, Graphics, Color, UITransform, Node, Prefab, instantiate, director, ball, _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _crd, ccclass, property, control;
 
   function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
 
@@ -57,7 +57,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         tooltip: "发射速度"
       }), _dec5 = property({
         tooltip: "准星 + 虚线 同比例缩放"
-      }), _dec(_class = (_class2 = class control extends Component {
+      }), _dec6 = property(Node), _dec(_class = (_class2 = class control extends Component {
         constructor() {
           super(...arguments);
 
@@ -68,6 +68,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           _initializerDefineProperty(this, "shootSpeed", _descriptor3, this);
 
           _initializerDefineProperty(this, "lineScale", _descriptor4, this);
+
+          _initializerDefineProperty(this, "PathRoot", _descriptor5, this);
 
           this.mouseWorld = new Vec3();
           this.hasMouseEntered = false;
@@ -106,7 +108,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           this.previewNode.getComponent(_crd && ball === void 0 ? (_reportPossibleCrUseOfball({
             error: Error()
           }), ball) : ball).setBullet(true);
-          this.node.parent.addChild(this.previewNode);
+          this.PathRoot.addChild(this.previewNode);
           this.previewNode.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y - 2, 0);
         }
 
@@ -210,12 +212,13 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           if (this.previewNode) {
             ballNode = this.previewNode;
             this.previewNode = null;
+            this.PathRoot.addChild(ballNode);
           } else {
             var index = Math.floor(Math.random() * this.balls.length);
             var prefab = this.balls[index];
             if (!prefab) return;
             ballNode = instantiate(prefab);
-            this.node.parent.addChild(ballNode);
+            this.PathRoot.addChild(ballNode);
             ballNode.setWorldPosition(selfPos);
           }
 
@@ -264,6 +267,13 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         writable: true,
         initializer: function initializer() {
           return 1;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "PathRoot", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
         }
       })), _class2)) || _class));
 

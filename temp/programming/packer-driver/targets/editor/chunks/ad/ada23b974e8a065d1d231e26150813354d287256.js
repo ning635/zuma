@@ -54,7 +54,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         onBeginContact(_, other) {
           var _director$getScene, _director$getScene2, _bulletNode$getCompon;
 
-          console.log("碰撞发生了");
+          //console.log("碰撞发生了");
           const selfBall = this.node.getComponent(_crd && ball === void 0 ? (_reportPossibleCrUseOfball({
             error: Error()
           }), ball) : ball);

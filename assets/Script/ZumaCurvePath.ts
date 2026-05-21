@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, Vec3, instantiate, Prefab, Color, Collider2D } from 'cc';
+import { GameManager } from './GameManager';
 import { ball } from './ball';
 const { ccclass, property } = _decorator;
 
@@ -23,7 +24,7 @@ export class ZumaCurvePath extends Component {
     private balls: Node[] = [];
     private ballPositions: number[] = [];
     private reconnecting: boolean = false;
-    private reconnectFrontEndIndex: number = -1;
+    private reconnectFrontEndIndex: number = this.spawnCount-1;
     private reconnectBackStartIndex: number = -1;
 
     private pathDistances: number[] = [];
@@ -48,9 +49,29 @@ export class ZumaCurvePath extends Component {
     }
 
     spawnBalls() {
-        for (let i = 0; i < this.spawnCount; i++) {
-            const ball = instantiate(this.ballPrefab[i % this.ballPrefab.length]) as Node;
-            ball.setParent(this.node.parent);
+        ////生成spawncount组单个球
+        // for (let i = 0; i < this.spawnCount; i++) {
+        //     const ball = instantiate(this.ballPrefab[i % this.ballPrefab.length]) as Node;
+        //     ball.setParent(this.node);
+        //     ball.active=false;
+        //     const col = ball.getComponent(Collider2D);
+        //     col.group = 1 << 1;
+
+        //     const startT = -i * this.ballSpacing;
+        //     this.balls.push(ball);
+        //     this.ballPositions.push(startT);
+
+        // }
+        //生成spawncount组双球
+        for (let i = 0; i < 2*this.spawnCount; i++) {
+            let ball=null!;
+            if(i%2==0){
+            ball = instantiate(this.ballPrefab[i % this.ballPrefab.length]) as Node;
+            }
+            else{
+            ball = instantiate(this.ballPrefab[(i-1) % this.ballPrefab.length]) as Node;
+            }
+            ball.setParent(this.node);
             ball.active=false;
             const col = ball.getComponent(Collider2D);
             col.group = 1 << 1;
@@ -58,17 +79,27 @@ export class ZumaCurvePath extends Component {
             const startT = -i * this.ballSpacing;
             this.balls.push(ball);
             this.ballPositions.push(startT);
+
         }
     }
 
     update(dt: number) {
+        if(this.balls.length==0){
+            GameManager.instance.Victory();
+            return;
+        }
+        
         for (let i = 0; i < this.balls.length; i++) {
             const ball = this.balls[i];
             if (!ball.isValid) continue;
 
             let t = this.ballPositions[i];
             t += this.moveSpeed * dt * 60;
-            while (t > 1) t -= 1;
+            while (t > 1) {
+                //t = t - 1;;
+                GameManager.instance.GameOver();
+                return;
+            }
 
             this.ballPositions[i] = t;
 
@@ -97,10 +128,30 @@ export class ZumaCurvePath extends Component {
         this.balls.splice(hitIndex, 0, bulletNode);
         this.ballPositions.splice(hitIndex, 0, insertT);
 
+        // console.log("reconnecting =", this.reconnecting);
+        // console.log("hitIndex =", hitIndex);
+        // console.log("reconnectFrontEndIndex =", this.reconnectFrontEndIndex);
+        if(!this.reconnecting){
         // 0 到 hitIndex 之前的球也要往前推一个身位
-        for (let i = 0; i <= hitIndex; i++) {
-            this.ballPositions[i] += this.ballSpacing;
+        console.log("ok");
+            for (let i = 0; i <= hitIndex; i++) {
+                this.ballPositions[i] += this.ballSpacing;
+            }
         }
+        else{
+            // 如果正在重新连接，且 hitIndex 在前半段，则前半段球都要往前推一个身位
+            if(hitIndex<=this.reconnectFrontEndIndex){
+                for (let i = 0; i <= hitIndex; i++) {
+                    this.ballPositions[i] += this.ballSpacing;
+                }
+            }
+            else if(hitIndex>=this.reconnectBackStartIndex){
+                for(let i=this.reconnectBackStartIndex;i<=hitIndex;i++){
+                    this.ballPositions[i] += this.ballSpacing;
+                }
+            }
+        }
+        
 
         this.syncBallNodesFromIndex(0);
 
@@ -133,15 +184,12 @@ export class ZumaCurvePath extends Component {
 
             this.balls.splice(runStart, runCount);
             this.ballPositions.splice(runStart, runCount);
-            // for (let i = runStart; i < this.ballPositions.length; i++) {
-            //     this.ballPositions[i] -= this.ballSpacing * runCount;
-            // }
 
             if (runStart > 0 && runStart < this.balls.length) {
                 this.beginReconnectGap(runStart - 1, runStart);
             } else {
                 this.reconnecting = false;
-                this.reconnectFrontEndIndex = -1;
+                this.reconnectFrontEndIndex = this.balls.length - 1;
                 this.reconnectBackStartIndex = -1;
             }
 
@@ -186,7 +234,7 @@ export class ZumaCurvePath extends Component {
 
         if (distanceAhead <this.ballSpacing) {
             this.reconnecting = false;
-            this.reconnectFrontEndIndex = -1;
+            this.reconnectFrontEndIndex = this.balls.length - 1;
             this.reconnectBackStartIndex = -1;
         }
 

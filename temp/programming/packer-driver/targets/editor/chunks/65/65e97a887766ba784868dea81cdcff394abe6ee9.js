@@ -1,13 +1,17 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Node, Vec3, instantiate, Prefab, Collider2D, ball, _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _crd, ccclass, property, ZumaCurvePath;
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Node, Vec3, instantiate, Prefab, Collider2D, GameManager, ball, _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _crd, ccclass, property, ZumaCurvePath;
 
   function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
 
   function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) { var desc = {}; Object.keys(descriptor).forEach(function (key) { desc[key] = descriptor[key]; }); desc.enumerable = !!desc.enumerable; desc.configurable = !!desc.configurable; if ('value' in desc || desc.initializer) { desc.writable = true; } desc = decorators.slice().reverse().reduce(function (desc, decorator) { return decorator(target, property, desc) || desc; }, desc); if (context && desc.initializer !== void 0) { desc.value = desc.initializer ? desc.initializer.call(context) : void 0; desc.initializer = undefined; } if (desc.initializer === void 0) { Object.defineProperty(target, property, desc); desc = null; } return desc; }
 
   function _initializerWarningHelper(descriptor, context) { throw new Error('Decorating class property failed. Please ensure that ' + 'transform-class-properties is enabled and runs after the decorators transform.'); }
+
+  function _reportPossibleCrUseOfGameManager(extras) {
+    _reporterNs.report("GameManager", "./GameManager", _context.meta, extras);
+  }
 
   function _reportPossibleCrUseOfball(extras) {
     _reporterNs.report("ball", "./ball", _context.meta, extras);
@@ -28,7 +32,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       Prefab = _cc.Prefab;
       Collider2D = _cc.Collider2D;
     }, function (_unresolved_2) {
-      ball = _unresolved_2.ball;
+      GameManager = _unresolved_2.GameManager;
+    }, function (_unresolved_3) {
+      ball = _unresolved_3.ball;
     }],
     execute: function () {
       _crd = true;
@@ -59,7 +65,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           this.balls = [];
           this.ballPositions = [];
           this.reconnecting = false;
-          this.reconnectFrontEndIndex = -1;
+          this.reconnectFrontEndIndex = this.spawnCount - 1;
           this.reconnectBackStartIndex = -1;
           this.pathDistances = [];
           this.totalPathLength = 0;
@@ -86,9 +92,28 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         }
 
         spawnBalls() {
-          for (let i = 0; i < this.spawnCount; i++) {
-            const ball = instantiate(this.ballPrefab[i % this.ballPrefab.length]);
-            ball.setParent(this.node.parent);
+          ////生成spawncount组单个球
+          // for (let i = 0; i < this.spawnCount; i++) {
+          //     const ball = instantiate(this.ballPrefab[i % this.ballPrefab.length]) as Node;
+          //     ball.setParent(this.node);
+          //     ball.active=false;
+          //     const col = ball.getComponent(Collider2D);
+          //     col.group = 1 << 1;
+          //     const startT = -i * this.ballSpacing;
+          //     this.balls.push(ball);
+          //     this.ballPositions.push(startT);
+          // }
+          //生成spawncount组双球
+          for (let i = 0; i < 2 * this.spawnCount; i++) {
+            let ball = null;
+
+            if (i % 2 == 0) {
+              ball = instantiate(this.ballPrefab[i % this.ballPrefab.length]);
+            } else {
+              ball = instantiate(this.ballPrefab[(i - 1) % this.ballPrefab.length]);
+            }
+
+            ball.setParent(this.node);
             ball.active = false;
             const col = ball.getComponent(Collider2D);
             col.group = 1 << 1;
@@ -99,13 +124,26 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         }
 
         update(dt) {
+          if (this.balls.length == 0) {
+            (_crd && GameManager === void 0 ? (_reportPossibleCrUseOfGameManager({
+              error: Error()
+            }), GameManager) : GameManager).instance.Victory();
+            return;
+          }
+
           for (let i = 0; i < this.balls.length; i++) {
             const ball = this.balls[i];
             if (!ball.isValid) continue;
             let t = this.ballPositions[i];
             t += this.moveSpeed * dt * 60;
 
-            while (t > 1) t -= 1;
+            while (t > 1) {
+              //t = t - 1;;
+              (_crd && GameManager === void 0 ? (_reportPossibleCrUseOfGameManager({
+                error: Error()
+              }), GameManager) : GameManager).instance.GameOver();
+              return;
+            }
 
             this.ballPositions[i] = t;
             if (t < 0) continue;
@@ -135,10 +173,28 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           const insertT = (_this$ballPositions$h = this.ballPositions[hitIndex]) != null ? _this$ballPositions$h : 0; //0类型为插入
 
           this.balls.splice(hitIndex, 0, bulletNode);
-          this.ballPositions.splice(hitIndex, 0, insertT); // 0 到 hitIndex 之前的球也要往前推一个身位
+          this.ballPositions.splice(hitIndex, 0, insertT); // console.log("reconnecting =", this.reconnecting);
+          // console.log("hitIndex =", hitIndex);
+          // console.log("reconnectFrontEndIndex =", this.reconnectFrontEndIndex);
 
-          for (let i = 0; i <= hitIndex; i++) {
-            this.ballPositions[i] += this.ballSpacing;
+          if (!this.reconnecting) {
+            // 0 到 hitIndex 之前的球也要往前推一个身位
+            console.log("ok");
+
+            for (let i = 0; i <= hitIndex; i++) {
+              this.ballPositions[i] += this.ballSpacing;
+            }
+          } else {
+            // 如果正在重新连接，且 hitIndex 在前半段，则前半段球都要往前推一个身位
+            if (hitIndex <= this.reconnectFrontEndIndex) {
+              for (let i = 0; i <= hitIndex; i++) {
+                this.ballPositions[i] += this.ballSpacing;
+              }
+            } else if (hitIndex >= this.reconnectBackStartIndex) {
+              for (let i = this.reconnectBackStartIndex; i <= hitIndex; i++) {
+                this.ballPositions[i] += this.ballSpacing;
+              }
+            }
           }
 
           this.syncBallNodesFromIndex(0);
@@ -171,15 +227,13 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
             }
 
             this.balls.splice(runStart, runCount);
-            this.ballPositions.splice(runStart, runCount); // for (let i = runStart; i < this.ballPositions.length; i++) {
-            //     this.ballPositions[i] -= this.ballSpacing * runCount;
-            // }
+            this.ballPositions.splice(runStart, runCount);
 
             if (runStart > 0 && runStart < this.balls.length) {
               this.beginReconnectGap(runStart - 1, runStart);
             } else {
               this.reconnecting = false;
-              this.reconnectFrontEndIndex = -1;
+              this.reconnectFrontEndIndex = this.balls.length - 1;
               this.reconnectBackStartIndex = -1;
             }
 
@@ -225,7 +279,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
           if (distanceAhead < this.ballSpacing) {
             this.reconnecting = false;
-            this.reconnectFrontEndIndex = -1;
+            this.reconnectFrontEndIndex = this.balls.length - 1;
             this.reconnectBackStartIndex = -1;
           }
 

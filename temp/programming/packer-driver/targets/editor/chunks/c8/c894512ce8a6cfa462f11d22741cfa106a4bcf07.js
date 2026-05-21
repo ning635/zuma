@@ -1,7 +1,7 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Node, director, _dec, _dec2, _class, _class2, _descriptor, _class3, _crd, ccclass, property, GameManager;
+  var _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Node, director, _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _class3, _crd, ccclass, property, GameManager;
 
   function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
 
@@ -24,18 +24,20 @@ System.register(["cc"], function (_export, _context) {
 
       _cclegacy._RF.push({}, "5c7f20SHN5Fob+2lcgIIbeQ", "GameManager", undefined);
 
-      __checkObsolete__(['_decorator', 'Component', 'Node', 'game', 'director']);
+      __checkObsolete__(['_decorator', 'Component', 'Node', 'game', 'director', 'tween']);
 
       ({
         ccclass,
         property
       } = _decorator);
 
-      _export("GameManager", GameManager = (_dec = ccclass('GameManager'), _dec2 = property(Node), _dec(_class = (_class2 = (_class3 = class GameManager extends Component {
+      _export("GameManager", GameManager = (_dec = ccclass('GameManager'), _dec2 = property(Node), _dec3 = property(Node), _dec(_class = (_class2 = (_class3 = class GameManager extends Component {
         constructor(...args) {
           super(...args);
 
           _initializerDefineProperty(this, "gameOverUI", _descriptor, this);
+
+          _initializerDefineProperty(this, "VictoryUI", _descriptor2, this);
         }
 
         onLoad() {
@@ -50,19 +52,29 @@ System.register(["cc"], function (_export, _context) {
         }
 
         GameOver() {
-          console.log("游戏结束");
-
           if (this.gameOverUI) {
             this.gameOverUI.active = true;
           }
         }
 
+        Victory() {
+          if (this.VictoryUI) {
+            this.VictoryUI.active = true;
+          }
+        }
+
         TryAgain() {
-          console.log("重新开始游戏");
           director.loadScene(director.getScene().name);
         }
 
       }, _class3.instance = void 0, _class3), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "gameOverUI", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function () {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "VictoryUI", [_dec3], {
         configurable: true,
         enumerable: true,
         writable: true,
