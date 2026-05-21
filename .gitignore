@@ -1,6 +1,6 @@
 #让git忽略的，不上传的临时文件
 Library/
-Temp/
+temp/
 Local/
 Build/
 Builds/
