@@ -810,7 +810,7 @@
     },
     "component": "",
     "_componentId": "f20e8FWMDZLZKU+K8VckI3l",
-    "handler": "LoadScene1",
+    "handler": "LoadSceneMap",
     "customEventData": ""
   },
   {

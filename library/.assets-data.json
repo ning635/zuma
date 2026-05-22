@@ -521,9 +521,12 @@
         "5a261990-0e54-45e2-82a1-035f12e6963d@f9941",
         "8f2f40a1-0fa2-41a8-a00a-12514cf54227@f9941",
         "859034ab-7319-4565-9e1f-4969cc8a43b1@f9941",
-        "3e3706d2-0f25-4196-afff-b5e27709804c@f9941"
+        "3e3706d2-0f25-4196-afff-b5e27709804c@f9941",
+        "32ca3732-8fc5-493f-8870-a7240b148aaf@f9941"
       ],
-      "dependScripts": []
+      "dependScripts": [
+        "f20e8156-3036-4b64-a53e-2bc55c908de5"
+      ]
     },
     "versionCode": 2
   },
@@ -721,6 +724,31 @@
     "value": {
       "depends": [
         "3e3706d2-0f25-4196-afff-b5e27709804c@6c48a"
+      ]
+    },
+    "versionCode": 1
+  },
+  "32ca3732-8fc5-493f-8870-a7240b148aaf": {
+    "url": "db://assets/image/button7.png",
+    "value": {
+      "depends": []
+    },
+    "versionCode": 1
+  },
+  "32ca3732-8fc5-493f-8870-a7240b148aaf@6c48a": {
+    "url": "db://assets/image/button7.png@6c48a",
+    "value": {
+      "depends": [
+        "32ca3732-8fc5-493f-8870-a7240b148aaf"
+      ]
+    },
+    "versionCode": 1
+  },
+  "32ca3732-8fc5-493f-8870-a7240b148aaf@f9941": {
+    "url": "db://assets/image/button7.png@f9941",
+    "value": {
+      "depends": [
+        "32ca3732-8fc5-493f-8870-a7240b148aaf@6c48a"
       ]
     },
     "versionCode": 1
