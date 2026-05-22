@@ -1,5 +1,5 @@
 #让git忽略的，不上传的临时文件
-Library/
+library/
 temp/
 Local/
 Build/
