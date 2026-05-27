@@ -12,7 +12,7 @@ export class BallCollision extends Component {
     }
 
     private onBeginContact(_, other: Collider2D) {
-        console.log("碰撞发生了");
+        //console.log("碰撞发生了");
         const selfBall = this.node.getComponent(ball);
         const otherBall = other.node.getComponent(ball);
 

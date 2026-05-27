@@ -1,0 +1,9 @@
+#让git忽略的，不上传的临时文件
+library/
+temp/
+Local/
+Build/
+Builds/
+project.json.backup
+*.log
+.DS_Store

@@ -16,6 +16,9 @@ export class control extends Component {
     @property({ tooltip: "准星 + 虚线 同比例缩放" })
     lineScale: number = 1;
 
+    @property(Node)
+    PathRoot: Node=null!;
+
     private mouseWorld: Vec3 = new Vec3();
     private hasMouseEntered = false;
 
@@ -54,7 +57,7 @@ export class control extends Component {
         const col = this.previewNode.getComponent(Collider2D);
         col.group=1<<2;
         this.previewNode.getComponent(ball)!.setBullet(true);
-        this.node.parent!.addChild(this.previewNode);
+        this.PathRoot!.addChild(this.previewNode);
         this.previewNode.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y-2, 0);
     }
 
@@ -173,12 +176,13 @@ export class control extends Component {
         if (this.previewNode) {
             ballNode = this.previewNode;
             this.previewNode = null;
+            this.PathRoot.addChild(ballNode); 
         } else {
             const index = Math.floor(Math.random() * this.balls.length);
             const prefab = this.balls[index];
             if (!prefab) return;
             ballNode = instantiate(prefab);
-            this.node.parent!.addChild(ballNode);
+            this.PathRoot!.addChild(ballNode);
             ballNode.setWorldPosition(selfPos);
         }
 
