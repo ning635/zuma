@@ -176,7 +176,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 640,
+    "_orthoHeight": 376.2025316455696,
     "_near": 0,
     "_far": 2000,
     "_color": {
@@ -1204,7 +1204,7 @@
     "_id": "8c/kWcvRZIxZ0NyPXGTmmW"
   },
   {
-    "__type__": "91023Wd4zVBD4BUze7wTIDK",
+    "__type__": "9210eMk/exDoKH53aZ/x+HT",
     "_name": "",
     "_objFlags": 0,
     "__editorExtras__": {},
@@ -1273,10 +1273,21 @@
         "__expectedType__": "cc.Prefab"
       }
     ],
-    "spawnCount": 26,
-    "moveSpeed": 42,
-    "ballSpacing": 48,
-    "_id": "42zLib3zBLV43j/1aPqcB1"
+    "spawnCount": 24,
+    "moveSpeed": 34,
+    "ballSpacing": 58,
+    "aimAssistRadius": 96,
+    "hitRadius": 66,
+    "shotSpeed": 1120,
+    "relicGoal": 4,
+    "shooterPosition": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": -510,
+      "z": 0
+    },
+    "rewardedReviveEnabled": true,
+    "_id": "d4Qe7w0rtD+5Pt4RKQWqHG"
   },
   {
     "__type__": "cc.UITransform",
@@ -1290,8 +1301,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 720,
-      "height": 1280
+      "width": 1280,
+      "height": 720
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1523,5 +1534,3 @@
     "_toneMappingType": 0
   }
 ]
-
-
