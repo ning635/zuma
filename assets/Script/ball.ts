@@ -1,8 +1,8 @@
 import { _decorator, Component, Node, Color } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('ball')
-export class ball extends Component {
+@ccclass('Ball')
+export class Ball extends Component {
 
     @property(Color)
     public BallColor: Color=null!;

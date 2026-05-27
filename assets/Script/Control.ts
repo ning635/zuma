@@ -1,5 +1,5 @@
 import { _decorator, Component, input, Input, EventMouse, Collider2D, Vec3, Camera, Graphics, Color, UITransform, Node, Prefab, instantiate, director } from 'cc';
-import { ball } from './ball';
+import { Ball } from './Ball';
 const { ccclass, property } = _decorator;
 
 @ccclass('control')
@@ -56,13 +56,13 @@ export class control extends Component {
         this.previewNode = instantiate(prefab);
         const col = this.previewNode.getComponent(Collider2D);
         col.group=1<<2;
-        this.previewNode.getComponent(ball)!.setBullet(true);
+        this.previewNode.getComponent(Ball)!.setBullet(true);
         this.PathRoot!.addChild(this.previewNode);
         this.previewNode.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y-2, 0);
     }
 
     update() {
-        // 🔥 更新所有发射出的小球位置
+        //更新所有发射出的小球位置
         const dt = director.getDeltaTime();
         for (let i = this.activeBalls.length - 1; i >= 0; i--) {
             const ball = this.activeBalls[i];
@@ -96,7 +96,7 @@ export class control extends Component {
             this.graphics.clear();
             
             this.graphics.strokeColor = new Color(128, 0, 128, 255);
-            // 🔥 线条粗细跟随比例
+            //线条粗细跟随比例
             this.graphics.lineWidth = 2 * this.lineScale;
             
             const uiTransform = this.drawNode.parent.getComponent(UITransform);
@@ -104,7 +104,7 @@ export class control extends Component {
                 const localSelf = uiTransform.convertToNodeSpaceAR(selfPos);
                 const localMouse = uiTransform.convertToNodeSpaceAR(this.mouseWorld);
                 
-                // 🔥 虚线样式全部按比例缩放
+                //虚线样式全部按比例缩放
                 const dashLen = 15 * this.lineScale;
                 const spaceLen = 10 * this.lineScale;
                 let currentLen = 0;
@@ -186,8 +186,8 @@ export class control extends Component {
             ballNode.setWorldPosition(selfPos);
         }
 
-        ballNode.getComponent(ball)!.setBullet(true);
-        //console.log(ballNode.getComponent(ball)!.BallColor);
+        ballNode.getComponent(Ball)!.setBullet(true);
+        //console.log(ballNode.getComponent(Ball)!.BallColor);
         // 记录到数组中进行移动控制
         this.activeBalls.push({ node: ballNode, dir: dir });
 

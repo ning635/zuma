@@ -1,6 +1,6 @@
 import { _decorator, Component, Node, Vec3, instantiate, Prefab, Color, Collider2D } from 'cc';
 import { GameManager } from './GameManager';
-import { ball } from './ball';
+import { Ball } from './Ball';
 const { ccclass, property } = _decorator;
 
 @ccclass('ZumaCurvePath')
@@ -62,6 +62,7 @@ export class ZumaCurvePath extends Component {
         //     this.ballPositions.push(startT);
 
         // }
+
         //生成spawncount组双球
         for (let i = 0; i < 2*this.spawnCount; i++) {
             let ball=null!;
@@ -79,8 +80,54 @@ export class ZumaCurvePath extends Component {
             const startT = -i * this.ballSpacing;
             this.balls.push(ball);
             this.ballPositions.push(startT);
-
         }
+        
+        //随机出球，每次一组,总共2*spawncount组,每组一个球，颜色随机
+        // for(let i=0;i<2*this.spawnCount;i++){
+        //     if(i>0){
+        //         let ballCount = 1;
+        //         if (Math.random() > 0.5) ballCount = 2;
+        //         for(let j=0;j<ballCount;j++){
+        //             let ball= null!;
+        //             if(j==0){
+        //                 ball = instantiate(this.ballPrefab[Math.floor(Math.random() * this.ballPrefab.length)]) as Node;
+        //                 while(this.balls.length>0&&this.isSameColor(this.balls[this.balls.length-1], ball.getComponent(Ball).BallColor)){
+        //                     ball=instantiate(this.ballPrefab[Math.floor(Math.random() * this.ballPrefab.length)]) as Node;
+        //                 }
+        //             }
+        //             else{
+        //                 ball=this.balls[this.balls.length-1];
+        //             }
+        //             ball.setParent(this.node);
+        //             ball.active=false;
+        //             const col = ball.getComponent(Collider2D);
+        //             col.group = 1 << 1;
+        //             const startT = -this.balls.length * this.ballSpacing;
+        //             this.balls.push(ball);
+        //             this.ballPositions.push(startT);
+        //         }
+        //     }
+        //     else{
+        //         const ball1 = instantiate(this.ballPrefab[Math.floor(Math.random() * this.ballPrefab.length)]) as Node;
+        //         const ball2 = instantiate(this.ballPrefab[Math.floor(Math.random() * this.ballPrefab.length)]) as Node;
+        //         ball1.setParent(this.node);
+        //         ball2.setParent(this.node);
+        //         ball1.active=false;
+        //         ball2.active=false;
+        //         const col1 = ball1.getComponent(Collider2D);
+        //         const col2 = ball2.getComponent(Collider2D);
+        //         col1.group = 1 << 1;
+        //         col2.group = 1 << 1;
+        //         const startT1 = -this.balls.length * this.ballSpacing;
+        //         this.balls.push(ball1);
+        //         this.ballPositions.push(startT1);
+                
+        //         const startT2 = -this.balls.length * this.ballSpacing;
+        //         this.balls.push(ball2);
+        //         this.ballPositions.push(startT2);
+
+        //     }
+        // }
     }
 
     update(dt: number) {
@@ -119,8 +166,8 @@ export class ZumaCurvePath extends Component {
         const hitIndex = this.balls.indexOf(hitNode);
         if (hitIndex < 0) return;
 
-        const bulletBall = bulletNode.getComponent(ball);
-        const hitBall = hitNode.getComponent(ball);
+        const bulletBall = bulletNode.getComponent(Ball);
+        const hitBall = hitNode.getComponent(Ball);
         if (!bulletBall || !hitBall) return;
 
         const insertT = this.ballPositions[hitIndex] ?? 0;
@@ -268,7 +315,7 @@ export class ZumaCurvePath extends Component {
     }
 
     private getBallColor(node: Node) {
-        return node.getComponent(ball)?.BallColor ?? null;
+        return node.getComponent(Ball)?.BallColor ?? null;
     }
 
     private isSameColor(node: Node, target: Color | null) {
