@@ -201,7 +201,7 @@ export class ZumaCurvePath extends Component {
         const col=bulletNode.getComponent(Collider2D);
         col.group=1<<1;
         const hitIndex = this.balls.indexOf(hitNode);
-
+        
         //冗余防爆，正常情况下应该不会找不到
         if (hitIndex < 0) return;
 
@@ -210,11 +210,24 @@ export class ZumaCurvePath extends Component {
 
         if (!bulletBall || !hitBall) return;
 
-        const insertT = this.ballPositions[hitIndex];
+        let CurIndex=hitIndex;
 
+        let insertT = this.ballPositions[hitIndex];
+        const leftT=this.ballPositions[hitIndex]-this.ballSpacing;
+        const rightT=this.ballPositions[hitIndex]+this.ballSpacing;
+        const virtualLeft=this.getPointByT(leftT);
+        const virtualRight=this.getPointByT(rightT);
+        const bulletPos=bulletNode.position;
+        if(Vec3.distance(bulletPos, virtualLeft)<Vec3.distance(bulletPos, virtualRight)){
+            CurIndex=hitIndex+1;
+            insertT=leftT;
+        }
+        else{
+            CurIndex=hitIndex;
+        }
         //0类型为插入
-        this.balls.splice(hitIndex, 0, bulletNode);
-        this.ballPositions.splice(hitIndex, 0, insertT);
+        this.balls.splice(CurIndex, 0, bulletNode);
+        this.ballPositions.splice(CurIndex, 0, insertT);
 
         // console.log("reconnecting =", this.reconnecting);
         // console.log("hitIndex =", hitIndex);
@@ -242,10 +255,9 @@ export class ZumaCurvePath extends Component {
         //     // }
         // }
 
-        this.resolveMatchFromIndex(hitIndex);
+        this.resolveMatchFromIndex(CurIndex);
 
-        let CurIndex=hitIndex;
-        console.log("ball["+CurIndex+"]: "+this.ballPositions[CurIndex]);
+        //console.log("ball["+CurIndex+"]: "+this.ballPositions[CurIndex]);
         while(CurIndex+1<this.balls.length&&CurIndex>=0){
             if(this.ballPositions[CurIndex+1]+this.ballSpacing-this.ballPositions[CurIndex]>0.001){
                 //console.log("ball["+(CurIndex+1)+"]:"+(this.ballPositions[CurIndex+1]+this.ballSpacing)+" > "+"ball["+CurIndex+"]:"+this.ballPositions[CurIndex]);
@@ -263,9 +275,13 @@ export class ZumaCurvePath extends Component {
     private syncBallNodesFromIndex(startIndex: number) {
         for (let i = startIndex; i < this.balls.length; i++) {
             const node = this.balls[i];
-            if (!node || !node.isValid) continue;
+            if (!node || !node.isValid){
+                console.log("invalid node at index "+i);
+                continue;
+            }
             node.setPosition(this.getPointByT(this.ballPositions[i]));
         }
+        console.log("has sync from index "+startIndex);
     }
     //消除功能
     private resolveMatchFromIndex(index: number) {

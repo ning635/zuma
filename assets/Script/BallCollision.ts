@@ -22,6 +22,9 @@ export class BallCollision extends Component {
         if (selfIsBullet === otherIsBullet) {
             return;
         }
+        else if(otherIsBullet){
+            return;
+        }
         //好垃圾的代码可读性，说白了就是确定哪个是轨道球，哪个是子弹
         const bulletNode: Node = selfIsBullet ? this.node : other.node;
         const hitNode: Node = selfIsBullet ? other.node : this.node;
