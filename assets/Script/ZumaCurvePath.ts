@@ -1,6 +1,6 @@
 import { _decorator, Component, Node, Vec3, instantiate, Prefab, Color, Collider2D } from 'cc';
 import { GameManager } from './GameManager';
-import { ball } from './ball';
+import { Ball } from './Ball';
 const { ccclass, property } = _decorator;
 
 @ccclass('ZumaCurvePath')
@@ -16,11 +16,11 @@ export class ZumaCurvePath extends Component {
     spawnCount: number = 5;            
 
     @property
-    moveSpeed: number = 0.005;
+    moveSpeed: number = 0.005;//以编辑器里的数值为准
 
     @property
     ballSpacing: number = 0.022;
-
+    private halfspeed= null!;
     private balls: Node[] = [];
     private ballPositions: number[] = [];
     private reconnecting: boolean = false;
@@ -29,10 +29,12 @@ export class ZumaCurvePath extends Component {
 
     private pathDistances: number[] = [];
     private totalPathLength: number = 0;
+    private initailization: boolean = false;
 
     start() {
         this.calculatePathDistances();
         this.spawnBalls();
+        this.halfspeed=this.moveSpeed/2;
     }
 
     calculatePathDistances() {
@@ -62,108 +64,250 @@ export class ZumaCurvePath extends Component {
         //     this.ballPositions.push(startT);
 
         // }
-        //生成spawncount组双球
-        for (let i = 0; i < 2*this.spawnCount; i++) {
-            let ball=null!;
-            if(i%2==0){
-            ball = instantiate(this.ballPrefab[i % this.ballPrefab.length]) as Node;
-            }
-            else{
-            ball = instantiate(this.ballPrefab[(i-1) % this.ballPrefab.length]) as Node;
-            }
-            ball.setParent(this.node);
-            ball.active=false;
-            const col = ball.getComponent(Collider2D);
-            col.group = 1 << 1;
 
-            const startT = -i * this.ballSpacing;
-            this.balls.push(ball);
-            this.ballPositions.push(startT);
+        //生成spawncount组双球
+        // for (let i = 0; i < 2*this.spawnCount; i++) {
+        //     let ball=null!;
+        //     if(i%2==0){
+        //     ball = instantiate(this.ballPrefab[i % this.ballPrefab.length]) as Node;
+        //     }
+        //     else{
+        //     ball = instantiate(this.ballPrefab[(i-1) % this.ballPrefab.length]) as Node;
+        //     }
+        //     ball.setParent(this.node);
+        //     ball.active=false;
+        //     const col = ball.getComponent(Collider2D);
+        //     col.group = 1 << 1;
+
+        //     const startT = -i * this.ballSpacing;
+        //     this.balls.push(ball);
+        //     this.ballPositions.push(startT);
+        // }
+        
+        //随机出球，每次一组,总共2*spawncount组,每组一个球，颜色随机
+        for(let i=0;i<2*this.spawnCount;i++){
+
+                const ball1 = instantiate(this.ballPrefab[Math.floor(Math.random() * this.ballPrefab.length)]) as Node;
+                let ball2=instantiate(this.ballPrefab[Math.floor(Math.random() * this.ballPrefab.length)]) as Node;
+                while(this.isSameColor(ball1, ball2.getComponent(Ball).BallColor)){
+                ball2 = instantiate(this.ballPrefab[Math.floor(Math.random() * this.ballPrefab.length)]) as Node;
+                }
+                ball1.setParent(this.node);
+                ball2.setParent(this.node);
+                ball1.active=false;
+                ball2.active=false;
+                const col1 = ball1.getComponent(Collider2D);
+                const col2 = ball2.getComponent(Collider2D);
+                col1.group = 1 << 1;
+                col2.group = 1 << 1;
+                const startT1 = -this.balls.length * this.ballSpacing;
+                this.balls.push(ball1);
+                this.ballPositions.push(startT1);
+                
+                const startT2 = -this.balls.length * this.ballSpacing;
+                this.balls.push(ball2);
+                this.ballPositions.push(startT2);
 
         }
     }
 
-    update(dt: number) {
+    // update(dt: number) {
+    //     //关于dt，假设当前设备帧数为n，dt=60/n（秒） dt*n=60
+    //     //那么t在一秒内的增量为this.moveSpeed*dt*60*n为常量
+    //     //这里当没球的时候说明 球链已经被消灭了，玩家胜利
+    //     if(this.balls.length==0){
+    //         GameManager.instance.Victory();
+    //         return;
+    //     }
+        
+    //     for (let i = 0; i < this.balls.length; i++) {
+    //         const ball = this.balls[i];
+    //         if (!ball.isValid) continue;
+    //         //这个设定是后浪推前浪，模拟真实的推动过程，但是游戏最开始球生成在一起，就是一个特殊情况
+    //         if(i>0&&this.ballPositions[i]+this.ballSpacing+this.moveSpeed*dt*65<this.ballPositions[i-1]&&this.initailization){
+    //             console.log(this.ballPositions[i]+this.ballSpacing+this.moveSpeed*dt*65+" < "+this.ballPositions[i-1]);
+    //             break;
+    //         }
+    //         //由此设定初始化布尔值，第一次是ok的
+    //         if(i==this.balls.length-1){
+    //             console.log(this.balls.length-1);
+    //             this.initailization=true;
+    //         }
+    //         //获取相对位置，过半的情况给球链减速
+    //         let t = this.ballPositions[i];
+    //         if(t>0.6){
+    //             this.moveSpeed=this.halfspeed;
+    //         }
+    //         t += this.moveSpeed * dt * 60;
+    //         //碰到尽头直接gameover
+    //         while (t > 1) {
+    //             GameManager.instance.GameOver();
+    //             return;
+    //         }
+
+    //         this.ballPositions[i] = t;
+    //         //更新t值后，显示t大于0的球
+    //         if(t>=0){
+    //             const pos = this.getPointByT(t);
+    //             ball.active=true;
+    //             ball.setPosition(pos);
+    //         }
+    //     }
+    //     this.updateReconnectGap(dt);
+    // }
+
+    update(dt:number){
+        //胜负判定直接写这里
         if(this.balls.length==0){
             GameManager.instance.Victory();
             return;
         }
-        
-        for (let i = 0; i < this.balls.length; i++) {
-            const ball = this.balls[i];
-            if (!ball.isValid) continue;
-
-            let t = this.ballPositions[i];
-            t += this.moveSpeed * dt * 60;
-            while (t > 1) {
-                //t = t - 1;;
+        //碰到尽头直接gameover
+        if(this.ballPositions[0] > 1) {
                 GameManager.instance.GameOver();
-                return;
+                this.moveSpeed=0;
+                this.halfspeed=0;
+                //return;
+        }
+        let backBallIndex=this.checkballs();
+        
+        //后浪推前浪
+        for(let i=this.balls.length-1;i>backBallIndex;i--){
+
+            const ball=this.balls[i];
+            let t = this.ballPositions[i];
+            if(t>0.6){
+                this.moveSpeed=this.halfspeed;
+            }
+            t += this.moveSpeed * dt * 60;
+            this.ballPositions[i] = t;
+            //更新t值后，显示t大于0的球
+            if(t>=0){
+                const pos = this.getPointByT(t);
+                ball.active=true;
+                ball.setPosition(pos);
             }
 
-            this.ballPositions[i] = t;
-
-            if(t<0) continue;
-
-            const pos = this.getPointByT(t);
-            ball.active=true;
-            ball.setPosition(pos);
+            //表示初始化好了
+            if(i==0){
+                this.initailization=true;
+            }
         }
+        //使用一下神秘的办法吧
+        for(let i=backBallIndex;i>=0;i--){
+            const ball=this.balls[i];
+            let t=this.ballPositions[i];
+            t+=this.moveSpeed*dt*0;
+            this.ballPositions[i]=t;
+            if(t>=0){
+                const pos=this.getPointByT(t);
+                ball.active=true;
+                ball.setPosition(pos);
+            }
 
-        this.updateReconnectGap(dt);
+        }
+    }
+    public checkballs():number{
+        if(this.initailization){
+            for(let i=this.balls.length-2;i>=0;i--){
+                if(this.ballPositions[i]-this.ballPositions[i+1]-this.ballSpacing>0.001){
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
     //处理碰撞插入新球
     public handleBulletCollision(bulletNode: Node, hitNode: Node) {
         const col=bulletNode.getComponent(Collider2D);
         col.group=1<<1;
         const hitIndex = this.balls.indexOf(hitNode);
+        
+        //冗余防爆，正常情况下应该不会找不到
         if (hitIndex < 0) return;
 
-        const bulletBall = bulletNode.getComponent(ball);
-        const hitBall = hitNode.getComponent(ball);
-        if (!bulletBall || !hitBall) return;
+        const bulletBall = bulletNode.getComponent(Ball);
+        const hitBall = hitNode.getComponent(Ball);
 
-        const insertT = this.ballPositions[hitIndex] ?? 0;
+        if (!bulletBall || !hitBall){
+            console.log("Component missing");
+            return;
+        }
+
+        let CurIndex=hitIndex;
+
+        let insertT = this.ballPositions[hitIndex];
+        const leftT=this.ballPositions[hitIndex]-this.ballSpacing;
+        const rightT=this.ballPositions[hitIndex]+this.ballSpacing;
+        const virtualLeft=this.getPointByT(leftT);
+        const virtualRight=this.getPointByT(rightT);
+        const bulletPos=bulletNode.position;
+        if(Vec3.distance(bulletPos, virtualLeft)<Vec3.distance(bulletPos, virtualRight)){
+            CurIndex=hitIndex+1;
+            insertT=leftT;
+        }
+        else{
+            CurIndex=hitIndex;
+        }
         //0类型为插入
-        this.balls.splice(hitIndex, 0, bulletNode);
-        this.ballPositions.splice(hitIndex, 0, insertT);
-
+        this.balls.splice(CurIndex, 0, bulletNode);
+        this.ballPositions.splice(CurIndex, 0, insertT);
+        let removeIndex=CurIndex;
         // console.log("reconnecting =", this.reconnecting);
         // console.log("hitIndex =", hitIndex);
         // console.log("reconnectFrontEndIndex =", this.reconnectFrontEndIndex);
-        if(!this.reconnecting){
-        // 0 到 hitIndex 之前的球也要往前推一个身位
-        console.log("ok");
-            for (let i = 0; i <= hitIndex; i++) {
-                this.ballPositions[i] += this.ballSpacing;
-            }
-        }
-        else{
-            // 如果正在重新连接，且 hitIndex 在前半段，则前半段球都要往前推一个身位
-            if(hitIndex<=this.reconnectFrontEndIndex){
-                for (let i = 0; i <= hitIndex; i++) {
-                    this.ballPositions[i] += this.ballSpacing;
-                }
-            }
-            else if(hitIndex>=this.reconnectBackStartIndex){
-                for(let i=this.reconnectBackStartIndex;i<=hitIndex;i++){
-                    this.ballPositions[i] += this.ballSpacing;
-                }
-            }
-        }
+        
+        // if(!this.reconnecting){
+        // // 0 到 hitIndex 之前的球也要往前推一个身位
+        // //console.log("ok");
+        //     for (let i = 0; i <= hitIndex; i++) {
+        //         this.ballPositions[i] += this.ballSpacing;
+        //     }
+        // }
+        // else{
+        //     //重写一下推球的逻辑
+        //     // 如果正在重新连接，且 hitIndex 在前半段，则前半段球都要往前推一个身位
+        //     // if(hitIndex<=this.reconnectFrontEndIndex){
+        //     //     for (let i = 0; i <= hitIndex; i++) {
+        //     //         this.ballPositions[i] += this.ballSpacing;
+        //     //     }
+        //     // }
+        //     // else if(hitIndex>=this.reconnectBackStartIndex){
+        //     //     for(let i=this.reconnectBackStartIndex;i<=hitIndex;i++){
+        //     //         this.ballPositions[i] += this.ballSpacing;
+        //     //     }
+        //     // }
+        // }
+
         
 
-        this.syncBallNodesFromIndex(0);
+        //console.log("ball["+CurIndex+"]: "+this.ballPositions[CurIndex]);
+        while(CurIndex+1<this.balls.length&&CurIndex>=0){
+            if(this.ballPositions[CurIndex+1]+this.ballSpacing-this.ballPositions[CurIndex]>0.001){
+                //console.log("ball["+(CurIndex+1)+"]:"+(this.ballPositions[CurIndex+1]+this.ballSpacing)+" > "+"ball["+CurIndex+"]:"+this.ballPositions[CurIndex]);
+                this.ballPositions[CurIndex] += this.ballSpacing;
+            }
+            else{
+                break;
+            }
+            CurIndex--;
+        }
 
-        this.resolveMatchFromIndex(hitIndex);
+        this.resolveMatchFromIndex(removeIndex);
+        this.syncBallNodesFromIndex(0);
+        
     }
     //调整球的位置
     private syncBallNodesFromIndex(startIndex: number) {
         for (let i = startIndex; i < this.balls.length; i++) {
             const node = this.balls[i];
-            if (!node || !node.isValid) continue;
+            if (!node || !node.isValid){
+                console.log("invalid node at index "+i);
+                continue;
+            }
             node.setPosition(this.getPointByT(this.ballPositions[i]));
         }
+        console.log("has sync from index "+startIndex);
     }
     //消除功能
     private resolveMatchFromIndex(index: number) {
@@ -185,67 +329,61 @@ export class ZumaCurvePath extends Component {
             this.balls.splice(runStart, runCount);
             this.ballPositions.splice(runStart, runCount);
 
-            if (runStart > 0 && runStart < this.balls.length) {
-                this.beginReconnectGap(runStart - 1, runStart);
-            } else {
-                this.reconnecting = false;
-                this.reconnectFrontEndIndex = this.balls.length - 1;
-                this.reconnectBackStartIndex = -1;
-            }
+            // if (runStart > 0 && runStart < this.balls.length) {
+            //     this.beginReconnectGap(runStart - 1, runStart);
+            // } else {
+            //     this.reconnecting = false;
+            //     this.reconnectFrontEndIndex = this.balls.length - 1;
+            //     this.reconnectBackStartIndex = -1;
+            // }
 
             checkIndex = Math.max(0, runStart - 1);
         }
     }
 
-    private beginReconnectGap(frontEndIndex: number, backStartIndex: number) {
-        this.reconnecting = true;
-        this.reconnectFrontEndIndex = frontEndIndex;
-        this.reconnectBackStartIndex = backStartIndex;
-    }
+    // private beginReconnectGap(frontEndIndex: number, backStartIndex: number) {
+    //     this.reconnecting = true;
+    //     this.reconnectFrontEndIndex = frontEndIndex;
+    //     this.reconnectBackStartIndex = backStartIndex;
+    // }
     
-    private updateReconnectGap(dt: number) {
-        if (!this.reconnecting) {
-            return;
-        }
+    // private updateReconnectGap(dt: number) {
+    //     if (!this.reconnecting) {
+    //         return;
+    //     }
 
-        if (this.reconnectFrontEndIndex < 0 || this.reconnectBackStartIndex < 0) {
-            this.reconnecting = false;
-            return;
-        }
+    //     if (this.reconnectFrontEndIndex < 0 || this.reconnectBackStartIndex < 0) {
+    //         this.reconnecting = false;
+    //         return;
+    //     }
 
-        if (this.reconnectFrontEndIndex >= this.balls.length || this.reconnectBackStartIndex >= this.balls.length) {
-            this.reconnecting = false;
-            return;
-        }
+    //     if (this.reconnectFrontEndIndex >= this.balls.length || this.reconnectBackStartIndex >= this.balls.length) {
+    //         this.reconnecting = false;
+    //         return;
+    //     }
 
-        const step = this.moveSpeed * dt * 60;
+    //     const step = this.moveSpeed * dt * 60;
 
-        for (let i = 0; i <= this.reconnectFrontEndIndex; i++) {
-            this.ballPositions[i] -= step;
-        }
+    //     for (let i = 0; i <= this.reconnectFrontEndIndex; i++) {
+    //         this.ballPositions[i] -= step;
+    //     }
 
-        // 只通过 ballPositions 判断后半段是否追上前半段
-        const frontPos = this.ballPositions[this.reconnectFrontEndIndex];
-        const backPos = this.ballPositions[this.reconnectBackStartIndex];
-        let distanceAhead = frontPos - backPos;
-        if (distanceAhead < 0) {
-            distanceAhead += 1;
-        }
+    //     // 只通过 ballPositions 判断后半段是否追上前半段
+    //     const frontPos = this.ballPositions[this.reconnectFrontEndIndex];
+    //     const backPos = this.ballPositions[this.reconnectBackStartIndex];
+    //     let distanceAhead = frontPos - backPos;
+    //     if (distanceAhead < 0) {
+    //         distanceAhead += 1;
+    //     }
 
-        if (distanceAhead <this.ballSpacing) {
-            this.reconnecting = false;
-            this.reconnectFrontEndIndex = this.balls.length - 1;
-            this.reconnectBackStartIndex = -1;
-        }
+    //     if (distanceAhead <this.ballSpacing) {
+    //         this.reconnecting = false;
+    //         this.reconnectFrontEndIndex = this.balls.length - 1;
+    //         this.reconnectBackStartIndex = -1;
+    //     }
 
-        this.syncBallNodesFromIndex(0);
-    }
-
-    private wrapT(value: number) {
-        while (value < 0) value += 1;
-        while (value > 1) value -= 1;
-        return value;
-    }
+    //     this.syncBallNodesFromIndex(0);
+    // }
 
     private findSameColorRunStart(index: number) {
         if (index < 0 || index >= this.balls.length) return -1;
@@ -268,9 +406,11 @@ export class ZumaCurvePath extends Component {
     }
 
     private getBallColor(node: Node) {
-        return node.getComponent(ball)?.BallColor ?? null;
+        return node.getComponent(Ball)?.BallColor ?? null;
     }
 
+    
+    //面向节点和颜色的函数
     private isSameColor(node: Node, target: Color | null) {
         const c = this.getBallColor(node);
         if (!c || !target) return false;

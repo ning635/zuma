@@ -1,5 +1,5 @@
 import { _decorator, Component, Collider2D, Contact2DType, director, Node } from 'cc';
-import { ball } from './ball';
+import { Ball } from './Ball';
 import { ZumaCurvePath } from './ZumaCurvePath';
 import { control } from './Control';
 const { ccclass } = _decorator;
@@ -13,13 +13,16 @@ export class BallCollision extends Component {
 
     private onBeginContact(_, other: Collider2D) {
         //console.log("碰撞发生了");
-        const selfBall = this.node.getComponent(ball);
-        const otherBall = other.node.getComponent(ball);
+        const selfBall = this.node.getComponent(Ball);
+        const otherBall = other.node.getComponent(Ball);
 
         const selfIsBullet = !!selfBall?.isbullet;
         const otherIsBullet = !!otherBall?.isbullet;
 
         if (selfIsBullet === otherIsBullet) {
+            return;
+        }
+        else if(otherIsBullet){
             return;
         }
         //好垃圾的代码可读性，说白了就是确定哪个是轨道球，哪个是子弹
@@ -31,7 +34,7 @@ export class BallCollision extends Component {
         shooter?.removeActiveBall(bulletNode);
         path?.handleBulletCollision(bulletNode, hitNode);
 
-        bulletNode.getComponent(ball)?.setBullet(false);
+        bulletNode.getComponent(Ball)?.setBullet(false);
 
     }
 
