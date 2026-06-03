@@ -857,31 +857,6 @@
       },
       "scale": 0.5327777777777778
     },
-    "d36cebc6-e124-4496-9a8f-f87ce9fb39ec": {
-      "position": {
-        "x": 1537.58226380627,
-        "y": 538.3305908554748,
-        "z": 5000
-      },
-      "rotation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "viewCenter": {
-        "x": 0,
-        "y": 0,
-        "z": 0
-      },
-      "contentRect": {
-        "x": 30.778377146379995,
-        "y": 40.90376562076415,
-        "width": 818,
-        "height": 460
-      },
-      "scale": 0.5508347883544744
-    },
     "30fd5482-eea0-4b6d-a349-c3ef8e1dba97": {
       "position": {
         "x": 723.447712836027,
@@ -931,6 +906,31 @@
         "height": 460
       },
       "scale": 0.4031583863371913
+    },
+    "d36cebc6-e124-4496-9a8f-f87ce9fb39ec": {
+      "position": {
+        "x": 1537.5822638062702,
+        "y": 538.3305908554748,
+        "z": 5000
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "contentRect": {
+        "x": 30.778377146379995,
+        "y": -378.4597257267474,
+        "width": 1660,
+        "height": 1010
+      },
+      "scale": 0.5508347883544744
     }
   },
   "camera-uuids": [
@@ -966,9 +966,9 @@
     "414796f4-f67d-48fc-9582-a2abecef29b9",
     "057fd5d8-92b4-4fd2-a19c-499722dcb9df",
     "0fb3d763-737f-49e2-9332-a729175589f9",
-    "d36cebc6-e124-4496-9a8f-f87ce9fb39ec",
     "30fd5482-eea0-4b6d-a349-c3ef8e1dba97",
-    "ba60efc0-dcd1-4d9b-a1fc-495b102b261d"
+    "ba60efc0-dcd1-4d9b-a1fc-495b102b261d",
+    "d36cebc6-e124-4496-9a8f-f87ce9fb39ec"
   ],
   "camera": {
     "color": [
@@ -996,8 +996,8 @@
     "output_device": "__default_design__"
   },
   "game-view": {
-    "scaleValue": 64,
-    "sliderValue": 30,
+    "scaleValue": 136,
+    "sliderValue": 56,
     "devicesInfo": {
       "name": "i18n:scene.game_view.design_resolution",
       "type": "design",
