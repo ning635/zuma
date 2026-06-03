@@ -166,6 +166,7 @@ export class ZumaCurvePath extends Component {
         if(this.ballPositions[0] > 1) {
                 GameManager.instance.GameOver();
                 this.moveSpeed=0;
+                this.halfspeed=0;
                 //return;
         }
         let backBallIndex=this.checkballs();
@@ -214,7 +215,6 @@ export class ZumaCurvePath extends Component {
                 }
             }
         }
-        console.log("all right");
         return -1;
     }
     //处理碰撞插入新球
@@ -329,61 +329,61 @@ export class ZumaCurvePath extends Component {
             this.balls.splice(runStart, runCount);
             this.ballPositions.splice(runStart, runCount);
 
-            if (runStart > 0 && runStart < this.balls.length) {
-                this.beginReconnectGap(runStart - 1, runStart);
-            } else {
-                this.reconnecting = false;
-                this.reconnectFrontEndIndex = this.balls.length - 1;
-                this.reconnectBackStartIndex = -1;
-            }
+            // if (runStart > 0 && runStart < this.balls.length) {
+            //     this.beginReconnectGap(runStart - 1, runStart);
+            // } else {
+            //     this.reconnecting = false;
+            //     this.reconnectFrontEndIndex = this.balls.length - 1;
+            //     this.reconnectBackStartIndex = -1;
+            // }
 
             checkIndex = Math.max(0, runStart - 1);
         }
     }
 
-    private beginReconnectGap(frontEndIndex: number, backStartIndex: number) {
-        this.reconnecting = true;
-        this.reconnectFrontEndIndex = frontEndIndex;
-        this.reconnectBackStartIndex = backStartIndex;
-    }
+    // private beginReconnectGap(frontEndIndex: number, backStartIndex: number) {
+    //     this.reconnecting = true;
+    //     this.reconnectFrontEndIndex = frontEndIndex;
+    //     this.reconnectBackStartIndex = backStartIndex;
+    // }
     
-    private updateReconnectGap(dt: number) {
-        if (!this.reconnecting) {
-            return;
-        }
+    // private updateReconnectGap(dt: number) {
+    //     if (!this.reconnecting) {
+    //         return;
+    //     }
 
-        if (this.reconnectFrontEndIndex < 0 || this.reconnectBackStartIndex < 0) {
-            this.reconnecting = false;
-            return;
-        }
+    //     if (this.reconnectFrontEndIndex < 0 || this.reconnectBackStartIndex < 0) {
+    //         this.reconnecting = false;
+    //         return;
+    //     }
 
-        if (this.reconnectFrontEndIndex >= this.balls.length || this.reconnectBackStartIndex >= this.balls.length) {
-            this.reconnecting = false;
-            return;
-        }
+    //     if (this.reconnectFrontEndIndex >= this.balls.length || this.reconnectBackStartIndex >= this.balls.length) {
+    //         this.reconnecting = false;
+    //         return;
+    //     }
 
-        const step = this.moveSpeed * dt * 60;
+    //     const step = this.moveSpeed * dt * 60;
 
-        for (let i = 0; i <= this.reconnectFrontEndIndex; i++) {
-            this.ballPositions[i] -= step;
-        }
+    //     for (let i = 0; i <= this.reconnectFrontEndIndex; i++) {
+    //         this.ballPositions[i] -= step;
+    //     }
 
-        // 只通过 ballPositions 判断后半段是否追上前半段
-        const frontPos = this.ballPositions[this.reconnectFrontEndIndex];
-        const backPos = this.ballPositions[this.reconnectBackStartIndex];
-        let distanceAhead = frontPos - backPos;
-        if (distanceAhead < 0) {
-            distanceAhead += 1;
-        }
+    //     // 只通过 ballPositions 判断后半段是否追上前半段
+    //     const frontPos = this.ballPositions[this.reconnectFrontEndIndex];
+    //     const backPos = this.ballPositions[this.reconnectBackStartIndex];
+    //     let distanceAhead = frontPos - backPos;
+    //     if (distanceAhead < 0) {
+    //         distanceAhead += 1;
+    //     }
 
-        if (distanceAhead <this.ballSpacing) {
-            this.reconnecting = false;
-            this.reconnectFrontEndIndex = this.balls.length - 1;
-            this.reconnectBackStartIndex = -1;
-        }
+    //     if (distanceAhead <this.ballSpacing) {
+    //         this.reconnecting = false;
+    //         this.reconnectFrontEndIndex = this.balls.length - 1;
+    //         this.reconnectBackStartIndex = -1;
+    //     }
 
-        this.syncBallNodesFromIndex(0);
-    }
+    //     this.syncBallNodesFromIndex(0);
+    // }
 
     private findSameColorRunStart(index: number) {
         if (index < 0 || index >= this.balls.length) return -1;
@@ -409,6 +409,8 @@ export class ZumaCurvePath extends Component {
         return node.getComponent(Ball)?.BallColor ?? null;
     }
 
+    
+    //面向节点和颜色的函数
     private isSameColor(node: Node, target: Color | null) {
         const c = this.getBallColor(node);
         if (!c || !target) return false;
