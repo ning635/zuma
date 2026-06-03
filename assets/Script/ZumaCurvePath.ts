@@ -165,15 +165,13 @@ export class ZumaCurvePath extends Component {
         //碰到尽头直接gameover
         if(this.ballPositions[0] > 1) {
                 GameManager.instance.GameOver();
-                return;
+                this.moveSpeed=0;
+                //return;
         }
-
+        let backBallIndex=this.checkballs();
+        
         //后浪推前浪
-        for(let i=this.balls.length-1;i>=0;i--){
-
-            if(i<this.balls.length-1&&this.ballPositions[i]-this.ballPositions[i+1]-this.ballSpacing>0.001&&this.initailization){
-                break;
-            }
+        for(let i=this.balls.length-1;i>backBallIndex;i--){
 
             const ball=this.balls[i];
             let t = this.ballPositions[i];
@@ -194,8 +192,31 @@ export class ZumaCurvePath extends Component {
                 this.initailization=true;
             }
         }
-    }
+        //使用一下神秘的办法吧
+        for(let i=backBallIndex;i>=0;i--){
+            const ball=this.balls[i];
+            let t=this.ballPositions[i];
+            t+=this.moveSpeed*dt*0;
+            this.ballPositions[i]=t;
+            if(t>=0){
+                const pos=this.getPointByT(t);
+                ball.active=true;
+                ball.setPosition(pos);
+            }
 
+        }
+    }
+    public checkballs():number{
+        if(this.initailization){
+            for(let i=this.balls.length-2;i>=0;i--){
+                if(this.ballPositions[i]-this.ballPositions[i+1]-this.ballSpacing>0.001){
+                    return i;
+                }
+            }
+        }
+        console.log("all right");
+        return -1;
+    }
     //处理碰撞插入新球
     public handleBulletCollision(bulletNode: Node, hitNode: Node) {
         const col=bulletNode.getComponent(Collider2D);
@@ -208,7 +229,10 @@ export class ZumaCurvePath extends Component {
         const bulletBall = bulletNode.getComponent(Ball);
         const hitBall = hitNode.getComponent(Ball);
 
-        if (!bulletBall || !hitBall) return;
+        if (!bulletBall || !hitBall){
+            console.log("Component missing");
+            return;
+        }
 
         let CurIndex=hitIndex;
 
@@ -228,7 +252,7 @@ export class ZumaCurvePath extends Component {
         //0类型为插入
         this.balls.splice(CurIndex, 0, bulletNode);
         this.ballPositions.splice(CurIndex, 0, insertT);
-
+        let removeIndex=CurIndex;
         // console.log("reconnecting =", this.reconnecting);
         // console.log("hitIndex =", hitIndex);
         // console.log("reconnectFrontEndIndex =", this.reconnectFrontEndIndex);
@@ -255,7 +279,7 @@ export class ZumaCurvePath extends Component {
         //     // }
         // }
 
-        this.resolveMatchFromIndex(CurIndex);
+        
 
         //console.log("ball["+CurIndex+"]: "+this.ballPositions[CurIndex]);
         while(CurIndex+1<this.balls.length&&CurIndex>=0){
@@ -268,6 +292,8 @@ export class ZumaCurvePath extends Component {
             }
             CurIndex--;
         }
+
+        this.resolveMatchFromIndex(removeIndex);
         this.syncBallNodesFromIndex(0);
         
     }
