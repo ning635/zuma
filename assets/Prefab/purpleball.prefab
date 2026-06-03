@@ -242,14 +242,14 @@
       "__type__": "cc.Color",
       "r": 128,
       "g": 0,
-      "b": 255,
+      "b": 128,
       "a": 255
     },
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "c3taAyuINNb72mwsBM7oF2"
+    "fileId": "26XYI8eFJN9Y011Zhj+VtK"
   },
   {
     "__type__": "cc.PrefabInfo",
