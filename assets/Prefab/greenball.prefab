@@ -241,7 +241,7 @@
     "BallColor": {
       "__type__": "cc.Color",
       "r": 0,
-      "g": 255,
+      "g": 249,
       "b": 0,
       "a": 255
     },
@@ -249,7 +249,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "05Z7bNTOVNkL1kDeY9Kt3G"
+    "fileId": "d2Dy0+g55BUISc5CdLsd6H"
   },
   {
     "__type__": "cc.PrefabInfo",

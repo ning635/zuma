@@ -1153,7 +1153,11 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "clickEvents": [],
+    "clickEvents": [
+      {
+        "__id__": 37
+      }
+    ],
     "_interactable": true,
     "_transition": 2,
     "_normalColor": {
@@ -1465,11 +1469,7 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "clickEvents": [
-      {
-        "__id__": 37
-      }
-    ],
+    "clickEvents": [],
     "_interactable": true,
     "_transition": 2,
     "_normalColor": {
@@ -1530,7 +1530,7 @@
     },
     "component": "",
     "_componentId": "f20e8FWMDZLZKU+K8VckI3l",
-    "handler": "LoadSceneMap",
+    "handler": "LoadSceneOptions",
     "customEventData": ""
   },
   {

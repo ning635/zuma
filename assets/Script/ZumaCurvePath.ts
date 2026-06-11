@@ -1,6 +1,8 @@
 import { _decorator, Component, Node, Vec3, instantiate, Prefab, Color, Collider2D } from 'cc';
 import { GameManager } from './GameManager';
 import { Ball } from './Ball';
+//加了个读取设置的功能，难度会影响初始球链的颜色数量、是否成对生成、移动速度
+import { GameDifficulty, SettingsStore } from './SettingsStore';
 const { ccclass, property } = _decorator;
 
 @ccclass('ZumaCurvePath')
@@ -30,11 +32,38 @@ export class ZumaCurvePath extends Component {
     private pathDistances: number[] = [];
     private totalPathLength: number = 0;
     private initailization: boolean = false;
+    //难度设置相关
+    private difficulty: GameDifficulty = 'normal';
+    private pairMode: boolean = true;
+    private colorLimit: number = 4;
 
     start() {
+        //开局先读难度
+        this.applyDifficultySettings();
         this.calculatePathDistances();
         this.spawnBalls();
         this.halfspeed=this.moveSpeed/2;
+    }
+
+    private applyDifficultySettings() {
+        //简单难度：成对生成，颜色数量限制为3，移动速度降低30%
+        this.difficulty = SettingsStore.load().difficulty;
+        if (this.difficulty === 'easy') {
+            this.pairMode = true;
+            this.colorLimit = 3;
+            this.moveSpeed *= 0.7;
+            return;
+        }
+     //困难难度：不成对生成，颜色数量不限，移动速度增加35%
+        if (this.difficulty === 'hard') {
+            this.pairMode = false;
+            this.colorLimit = this.ballPrefab.length;
+            this.moveSpeed *= 1.35;
+            return;
+        }
+
+        this.pairMode = true;
+        this.colorLimit = Math.min(4, this.ballPrefab.length);
     }
 
     calculatePathDistances() {
@@ -84,31 +113,41 @@ export class ZumaCurvePath extends Component {
         //     this.ballPositions.push(startT);
         // }
         
-        //随机出球，每次一组,总共2*spawncount组,每组一个球，颜色随机
-        for(let i=0;i<2*this.spawnCount;i++){
-
-                const ball1 = instantiate(this.ballPrefab[Math.floor(Math.random() * this.ballPrefab.length)]) as Node;
-                let ball2=instantiate(this.ballPrefab[Math.floor(Math.random() * this.ballPrefab.length)]) as Node;
-                while(this.isSameColor(ball1, ball2.getComponent(Ball).BallColor)){
-                ball2 = instantiate(this.ballPrefab[Math.floor(Math.random() * this.ballPrefab.length)]) as Node;
-                }
-                ball1.setParent(this.node);
-                ball2.setParent(this.node);
-                ball1.active=false;
-                ball2.active=false;
-                const col1 = ball1.getComponent(Collider2D);
-                const col2 = ball2.getComponent(Collider2D);
-                col1.group = 1 << 1;
-                col2.group = 1 << 1;
-                const startT1 = -this.balls.length * this.ballSpacing;
-                this.balls.push(ball1);
-                this.ballPositions.push(startT1);
-                
-                const startT2 = -this.balls.length * this.ballSpacing;
-                this.balls.push(ball2);
-                this.ballPositions.push(startT2);
-
+        // Difficulty controls whether the opening chain is paired or messy.
+        const usablePrefabs = this.ballPrefab.slice(0, Math.max(1, Math.min(this.colorLimit, this.ballPrefab.length)));
+        if (usablePrefabs.length === 0) {
+            return;
         }
+
+        const totalBalls = 4 * this.spawnCount;
+        if (this.pairMode) {
+            for (let i = 0; i < totalBalls; i += 2) {
+                const prefabIndex = Math.floor(Math.random() * usablePrefabs.length);
+                this.addPathBall(usablePrefabs[prefabIndex]);
+                this.addPathBall(usablePrefabs[prefabIndex]);
+            }
+            return;
+        }
+
+        for (let i = 0; i < totalBalls; i++) {
+            const prefabIndex = Math.floor(Math.random() * usablePrefabs.length);
+            this.addPathBall(usablePrefabs[prefabIndex]);
+        }
+    }
+
+    private addPathBall(prefab: Prefab) {
+        const ball = instantiate(prefab) as Node;
+        ball.setParent(this.node);
+        ball.active = false;
+
+        const col = ball.getComponent(Collider2D);
+        if (col) {
+            col.group = 1 << 1;
+        }
+
+        const startT = -this.balls.length * this.ballSpacing;
+        this.balls.push(ball);
+        this.ballPositions.push(startT);
     }
 
     // update(dt: number) {
