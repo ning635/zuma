@@ -2,10 +2,12 @@ import { sys } from 'cc';
 
 export type GameLanguage = 'zh-Hans' | 'zh-Hant' | 'en';
 export type GameDifficulty = 'easy' | 'normal' | 'hard';
+export type GameMode = 'level' | 'endless';
 
 export interface GameSettings {
     language: GameLanguage;
     difficulty: GameDifficulty;
+    mode: GameMode;
     musicEnabled: boolean;
     soundEnabled: boolean;
     vibrationEnabled: boolean;
@@ -20,14 +22,15 @@ export const languageOptions: { value: GameLanguage; label: string }[] = [
 ];
 //难度选项：简单、普通、困难
 export const difficultyOptions: { value: GameDifficulty; label: string }[] = [
-    { value: 'easy', label: 'Easy' },
-    { value: 'normal', label: 'Normal' },
-    { value: 'hard', label: 'Hard' },
+    { value: 'easy', label: '简单' },
+    { value: 'normal', label: '普通' },
+    { value: 'hard', label: '困难' },
 ];
 //默认设置：英语、普通难度、音乐开启、音效开启、震动开启
 const defaultSettings: GameSettings = {
     language: 'zh-Hans',
     difficulty: 'normal',
+    mode: 'level',
     musicEnabled: true,
     soundEnabled: true,
     vibrationEnabled: true,
@@ -45,6 +48,7 @@ export class SettingsStore {
             return {
                 language: SettingsStore.pickValid(saved.language, languageOptions, defaultSettings.language),
                 difficulty: SettingsStore.pickValid(saved.difficulty, difficultyOptions, defaultSettings.difficulty),
+                mode: saved.mode === 'endless' ? 'endless' : defaultSettings.mode,
                 musicEnabled: typeof saved.musicEnabled === 'boolean' ? saved.musicEnabled : defaultSettings.musicEnabled,
                 soundEnabled: typeof saved.soundEnabled === 'boolean' ? saved.soundEnabled : defaultSettings.soundEnabled,
                 vibrationEnabled: typeof saved.vibrationEnabled === 'boolean' ? saved.vibrationEnabled : defaultSettings.vibrationEnabled,
@@ -77,7 +81,7 @@ export class SettingsStore {
     }
 
     public static labelForDifficulty(value: GameDifficulty): string {
-        return difficultyOptions.find(item => item.value === value)?.label ?? 'Normal';
+        return difficultyOptions.find(item => item.value === value)?.label ?? '普通';
     }
 
     private static pickValid<T extends string>(

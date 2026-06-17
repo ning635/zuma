@@ -30,11 +30,14 @@ export class BallCollision extends Component {
         const hitNode: Node = selfIsBullet ? other.node : this.node;
         const path = director.getScene()?.getComponentInChildren(ZumaCurvePath);
         const shooter = director.getScene()?.getComponentInChildren(control);
-
-        shooter?.removeActiveBall(bulletNode);
-        path?.handleBulletCollision(bulletNode, hitNode);
+        const bulletCollider = bulletNode.getComponent(Collider2D);
 
         bulletNode.getComponent(Ball)?.setBullet(false);
+        if (bulletCollider) {
+            bulletCollider.enabled = false;
+        }
+        shooter?.removeActiveBall(bulletNode);
+        path?.handleBulletCollision(bulletNode, hitNode);
 
     }
 

@@ -1,6 +1,7 @@
 import { _decorator, Component, Node, Vec3, instantiate, Prefab, Color, Collider2D } from 'cc';
 import { GameManager } from './GameManager';
 import { Ball } from './Ball';
+import { GameAudio } from './GameAudio';
 //加了个读取设置的功能，难度会影响初始球链的颜色数量、是否成对生成、移动速度
 import { GameDifficulty, SettingsStore } from './SettingsStore';
 const { ccclass, property } = _decorator;
@@ -36,13 +37,47 @@ export class ZumaCurvePath extends Component {
     private difficulty: GameDifficulty = 'normal';
     private pairMode: boolean = true;
     private colorLimit: number = 4;
+    private baseMoveSpeed: number = 0;
+    private baseSpawnCount: number = 0;
+    private readonly minPlayableMoveSpeed: number = 0.0005;
 
     start() {
         //开局先读难度
         this.applyDifficultySettings();
+        this.moveSpeed = Math.max(this.moveSpeed, this.minPlayableMoveSpeed);
         this.calculatePathDistances();
-        this.spawnBalls();
+        this.baseMoveSpeed = this.moveSpeed;
+        this.baseSpawnCount = this.spawnCount;
+        this.scheduleOnce(() => {
+            if (GameManager.instance) {
+                GameManager.instance.BeginOpeningRuneChoice((waveIndex: number) => this.StartNextWave(waveIndex));
+                return;
+            }
+
+            this.StartNextWave(1);
+        }, 0);
+    }
+
+    public StartNextWave(waveIndex: number) {
+        this.clearBalls();
+        this.initailization = false;
+        this.reconnecting = false;
+        this.reconnectFrontEndIndex = this.spawnCount - 1;
+        this.reconnectBackStartIndex = -1;
+        this.spawnCount = Math.max(4, this.baseSpawnCount - 1 + Math.max(0, waveIndex - 1));
+        this.moveSpeed = this.baseMoveSpeed * (1 + Math.max(0, waveIndex - 1) * 0.12);
         this.halfspeed=this.moveSpeed/2;
+        this.spawnBalls();
+    }
+
+    private clearBalls() {
+        for (const ball of this.balls) {
+            if (ball && ball.isValid) {
+                ball.destroy();
+            }
+        }
+        this.balls = [];
+        this.ballPositions = [];
     }
 
     private applyDifficultySettings() {
@@ -119,20 +154,53 @@ export class ZumaCurvePath extends Component {
             return;
         }
 
-        const totalBalls = 4 * this.spawnCount;
+        const totalBalls = Math.max(9, this.spawnCount * 2);
         if (this.pairMode) {
+            let lastPrefabIndex = -1;
+            let secondLastPrefabIndex = -1;
             for (let i = 0; i < totalBalls; i += 2) {
-                const prefabIndex = Math.floor(Math.random() * usablePrefabs.length);
+                let prefabIndex = this.pickOpeningPairIndex(usablePrefabs.length, lastPrefabIndex, secondLastPrefabIndex);
+                if (usablePrefabs.length > 1 && prefabIndex === lastPrefabIndex) {
+                    prefabIndex = (prefabIndex + 1) % usablePrefabs.length;
+                }
+                secondLastPrefabIndex = lastPrefabIndex;
+                lastPrefabIndex = prefabIndex;
                 this.addPathBall(usablePrefabs[prefabIndex]);
                 this.addPathBall(usablePrefabs[prefabIndex]);
             }
             return;
         }
 
+        let previousPrefabIndex = -1;
+        let sameCount = 0;
         for (let i = 0; i < totalBalls; i++) {
-            const prefabIndex = Math.floor(Math.random() * usablePrefabs.length);
+            let prefabIndex = Math.floor(Math.random() * usablePrefabs.length);
+            if (usablePrefabs.length > 1 && prefabIndex === previousPrefabIndex && sameCount >= 2) {
+                prefabIndex = (prefabIndex + 1) % usablePrefabs.length;
+            }
+            sameCount = prefabIndex === previousPrefabIndex ? sameCount + 1 : 1;
+            previousPrefabIndex = prefabIndex;
             this.addPathBall(usablePrefabs[prefabIndex]);
         }
+    }
+
+    private pickOpeningPairIndex(colorCount: number, lastIndex: number, secondLastIndex: number): number {
+        if (colorCount <= 1) {
+            return 0;
+        }
+
+        const candidates: number[] = [];
+        for (let i = 0; i < colorCount; i++) {
+            if (i !== lastIndex && (colorCount <= 2 || i !== secondLastIndex)) {
+                candidates.push(i);
+            }
+        }
+
+        if (candidates.length === 0) {
+            return (lastIndex + 1) % colorCount;
+        }
+
+        return candidates[Math.floor(Math.random() * candidates.length)];
     }
 
     private addPathBall(prefab: Prefab) {
@@ -145,7 +213,7 @@ export class ZumaCurvePath extends Component {
             col.group = 1 << 1;
         }
 
-        const startT = -this.balls.length * this.ballSpacing;
+        const startT = -0.03 - this.balls.length * this.ballSpacing;
         this.balls.push(ball);
         this.ballPositions.push(startT);
     }
@@ -196,9 +264,21 @@ export class ZumaCurvePath extends Component {
     // }
 
     update(dt:number){
+        if (GameManager.instance && !GameManager.instance.CanPlay()) {
+            return;
+        }
         //胜负判定直接写这里
         if(this.balls.length==0){
-            GameManager.instance.Victory();
+            this.completeWave();
+            return;
+        }
+        if (this.balls.length <= 2) {
+            this.clearBalls();
+            this.completeWave();
+            return;
+        }
+        if (GameManager.instance?.IsChainFrozen()) {
+            this.syncBallNodesFromIndex(0);
             return;
         }
         //碰到尽头直接gameover
@@ -206,7 +286,7 @@ export class ZumaCurvePath extends Component {
                 GameManager.instance.GameOver();
                 this.moveSpeed=0;
                 this.halfspeed=0;
-                //return;
+                return;
         }
         let backBallIndex=this.checkballs();
         
@@ -259,7 +339,10 @@ export class ZumaCurvePath extends Component {
     //处理碰撞插入新球
     public handleBulletCollision(bulletNode: Node, hitNode: Node) {
         const col=bulletNode.getComponent(Collider2D);
-        col.group=1<<1;
+        if (col) {
+            col.group=1<<1;
+            col.enabled = true;
+        }
         const hitIndex = this.balls.indexOf(hitNode);
         
         //冗余防爆，正常情况下应该不会找不到
@@ -269,7 +352,6 @@ export class ZumaCurvePath extends Component {
         const hitBall = hitNode.getComponent(Ball);
 
         if (!bulletBall || !hitBall){
-            console.log("Component missing");
             return;
         }
 
@@ -332,7 +414,11 @@ export class ZumaCurvePath extends Component {
             CurIndex--;
         }
 
-        this.resolveMatchFromIndex(removeIndex);
+        bulletBall.setBullet(false);
+        const matched = this.resolveMatchFromIndex(removeIndex);
+        if (!matched) {
+            GameManager.instance?.BreakCombo();
+        }
         this.syncBallNodesFromIndex(0);
         
     }
@@ -341,42 +427,90 @@ export class ZumaCurvePath extends Component {
         for (let i = startIndex; i < this.balls.length; i++) {
             const node = this.balls[i];
             if (!node || !node.isValid){
-                console.log("invalid node at index "+i);
                 continue;
             }
             node.setPosition(this.getPointByT(this.ballPositions[i]));
         }
-        console.log("has sync from index "+startIndex);
+    }
+
+    private completeWave() {
+        if (GameManager.instance) {
+            GameManager.instance.HandleWaveCleared((waveIndex: number) => this.StartNextWave(waveIndex));
+        }
     }
     //消除功能
-    private resolveMatchFromIndex(index: number) {
-        let checkIndex = index;
+    private resolveMatchFromIndex(index: number): boolean {
+        if (this.balls.length === 0 || index < 0 || index >= this.balls.length) {
+            return false;
+        }
 
-        while (this.balls.length > 0 && checkIndex >= 0 && checkIndex < this.balls.length) {
-            const runStart = this.findSameColorRunStart(checkIndex);
-            if (runStart < 0) break;
+        const runStart = this.findSameColorRunStart(index);
+        const runEnd = this.findSameColorRunEnd(index);
+        if (runStart < 0 || runEnd < runStart) {
+            return false;
+        }
 
-            const runEnd = this.findSameColorRunEnd(checkIndex);
-            const runCount = runEnd - runStart + 1;
-            if (runCount < 3) break;
+        const runCount = runEnd - runStart + 1;
+        if (runCount < 3) {
+            return false;
+        }
 
-            for (let i = runStart; i <= runEnd; i++) {
-                const node = this.balls[i];
-                if (node && node.isValid) node.destroy();
-            }
+        const fireExpansion = GameManager.instance?.GetFireExpansion(runCount) ?? 0;
+        const removeStart = Math.max(0, runStart - fireExpansion);
+        const removeEnd = Math.min(this.balls.length - 1, runEnd + fireExpansion);
+        const removedCount = removeEnd - removeStart + 1;
 
-            this.balls.splice(runStart, runCount);
-            this.ballPositions.splice(runStart, runCount);
+        this.removeMatchedRun(removeStart, removeEnd);
+        GameManager.instance?.RegisterMatch(removedCount);
+        GameAudio.playMerge();
+        this.applyRewindRune();
+        this.resolveBridgeMatch(removeStart);
+        return true;
+    }
 
-            // if (runStart > 0 && runStart < this.balls.length) {
-            //     this.beginReconnectGap(runStart - 1, runStart);
-            // } else {
-            //     this.reconnecting = false;
-            //     this.reconnectFrontEndIndex = this.balls.length - 1;
-            //     this.reconnectBackStartIndex = -1;
-            // }
+    private removeMatchedRun(runStart: number, runEnd: number) {
+        for (let i = runStart; i <= runEnd; i++) {
+            const node = this.balls[i];
+            if (node && node.isValid) node.destroy();
+        }
 
-            checkIndex = Math.max(0, runStart - 1);
+        this.balls.splice(runStart, runEnd - runStart + 1);
+        this.ballPositions.splice(runStart, runEnd - runStart + 1);
+    }
+
+    private resolveBridgeMatch(gapIndex: number) {
+        const rightIndex = gapIndex;
+        const leftIndex = gapIndex - 1;
+        if (leftIndex < 0 || rightIndex >= this.balls.length) {
+            return;
+        }
+
+        if (!this.isSameColor(this.balls[leftIndex], this.getBallColor(this.balls[rightIndex]))) {
+            return;
+        }
+
+        const bridgeStart = this.findSameColorRunStart(leftIndex);
+        const bridgeEnd = this.findSameColorRunEnd(rightIndex);
+        const bridgeCount = bridgeEnd - bridgeStart + 1;
+        if (bridgeCount < 3) {
+            return;
+        }
+
+        this.removeMatchedRun(bridgeStart, bridgeEnd);
+        GameManager.instance?.RegisterMatch(bridgeCount);
+        GameAudio.playMerge();
+        this.applyRewindRune();
+        this.resolveBridgeMatch(bridgeStart);
+    }
+
+    private applyRewindRune() {
+        const rewindStep = GameManager.instance?.GetRewindStep() ?? 0;
+        if (rewindStep <= 0) {
+            return;
+        }
+
+        for (let i = 0; i < this.ballPositions.length; i++) {
+            this.ballPositions[i] -= rewindStep;
         }
     }
 

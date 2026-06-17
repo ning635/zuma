@@ -1,5 +1,7 @@
-import { _decorator, Component, input, Input, EventMouse, Collider2D, Vec3, Camera, Graphics, Color, UITransform, Node, Prefab, instantiate, director } from 'cc';
+import { _decorator, Component, input, Input, EventMouse, EventTouch, Collider2D, Vec3, Camera, Graphics, Color, UITransform, Node, Prefab, instantiate, director } from 'cc';
 import { Ball } from './Ball';
+import { GameManager } from './GameManager';
+import { GameAudio } from './GameAudio';
 const { ccclass, property } = _decorator;
 
 @ccclass('control')
@@ -11,13 +13,16 @@ export class control extends Component {
     mainCam: Camera = null!;
     
     @property({ tooltip: "发射速度" })
-    shootSpeed: number = 800;
+    shootSpeed: number = 1100;
 
     @property({ tooltip: "准星 + 虚线 同比例缩放" })
     lineScale: number = 1;
 
     @property(Node)
     PathRoot: Node=null!;
+
+    @property({ tooltip: "发射器预览球相对炮台中心的竖向偏移" })
+    previewOffsetY: number = 22;
 
     private mouseWorld: Vec3 = new Vec3();
     private hasMouseEntered = false;
@@ -27,10 +32,16 @@ export class control extends Component {
     private activeBalls: { node: Node, dir: Vec3 }[] = [];
     private previewNode: Node | null = null;
     private previewIndex: number = -1;
+    private lastFireTime: number = 0;
+    private readonly fireCooldownMs: number = 90;
 
     onLoad() {
         input.on(Input.EventType.MOUSE_MOVE, this.setMousePos, this);
         input.on(Input.EventType.MOUSE_DOWN, this.shootBall, this);
+        input.on(Input.EventType.TOUCH_MOVE, this.setTouchPos, this);
+        input.on(Input.EventType.TOUCH_START, this.setTouchPos, this);
+        input.on(Input.EventType.TOUCH_END, this.shootTouchBall, this);
+        GameAudio.preload();
         
         this.drawNode = new Node("AimLine");
         this.node.parent!.addChild(this.drawNode);
@@ -55,10 +66,12 @@ export class control extends Component {
 
         this.previewNode = instantiate(prefab);
         const col = this.previewNode.getComponent(Collider2D);
-        col.group=1<<2;
+        if (col) {
+            col.group = 1 << 2;
+        }
         this.previewNode.getComponent(Ball)!.setBullet(true);
         this.PathRoot!.addChild(this.previewNode);
-        this.previewNode.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y-2, 0);
+        this.previewNode.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y + this.previewOffsetY, 0);
     }
 
     update() {
@@ -82,6 +95,11 @@ export class control extends Component {
             } else {
                 this.activeBalls.splice(i, 1);
             }
+        }
+
+        if (GameManager.instance && !GameManager.instance.CanPlay()) {
+            this.graphics?.clear();
+            return;
         }
 
         if (!this.mainCam || !this.hasMouseEntered) return;
@@ -157,18 +175,47 @@ export class control extends Component {
 
     shootBall(e: EventMouse) {
         if (e.getButton() !== EventMouse.BUTTON_LEFT || this.balls.length === 0) return;
+        this.fireAtScreenPosition(e.getLocationX(), e.getLocationY());
+    }
+
+    setTouchPos(e: EventTouch) {
+        const location = e.getLocation();
+        this.hasMouseEntered = true;
+        this.mainCam.screenToWorld(
+            this.mouseWorld.set(location.x, location.y, 0),
+            this.mouseWorld
+        );
+    }
+
+    shootTouchBall(e: EventTouch) {
+        const location = e.getLocation();
+        this.setTouchPos(e);
+        this.fireAtScreenPosition(location.x, location.y);
+    }
+
+    private fireAtScreenPosition(screenX: number, screenY: number) {
+        if ((GameManager.instance && !GameManager.instance.CanPlay()) || this.balls.length === 0) return;
+        const now = Date.now();
+        if (now - this.lastFireTime < this.fireCooldownMs) {
+            return;
+        }
 
         // 获取发射方向 (鼠标方向)
         const selfPos = this.node.worldPosition;
         const targetWorld = new Vec3();
         this.mainCam.screenToWorld(
-            targetWorld.set(e.getLocationX(), e.getLocationY(), 0), 
+            targetWorld.set(screenX, screenY, 0),
             targetWorld
         );
 
-        const dx = targetWorld.x - selfPos.x;
-        const dy = targetWorld.y - selfPos.y;
-        const dir = new Vec3(dx, dy, 0);
+        const pathTransform = this.PathRoot?.getComponent(UITransform);
+        const localSelf = pathTransform ? pathTransform.convertToNodeSpaceAR(selfPos) : selfPos.clone();
+        const localTarget = pathTransform ? pathTransform.convertToNodeSpaceAR(targetWorld) : targetWorld.clone();
+        const dir = new Vec3(localTarget.x - localSelf.x, localTarget.y - localSelf.y, 0);
+        if (dir.length() < 8) {
+            return;
+        }
+        this.lastFireTime = now;
         dir.normalize();
 
         // 如果存在预览节点，则将其作为发射球使用，否则随机实例化一个
@@ -176,20 +223,30 @@ export class control extends Component {
         if (this.previewNode) {
             ballNode = this.previewNode;
             this.previewNode = null;
-            this.PathRoot.addChild(ballNode); 
+            this.PathRoot.addChild(ballNode);
+            if (pathTransform) {
+                ballNode.setPosition(localSelf);
+            } else {
+                ballNode.setWorldPosition(selfPos);
+            }
         } else {
             const index = Math.floor(Math.random() * this.balls.length);
             const prefab = this.balls[index];
             if (!prefab) return;
             ballNode = instantiate(prefab);
             this.PathRoot!.addChild(ballNode);
-            ballNode.setWorldPosition(selfPos);
+            if (pathTransform) {
+                ballNode.setPosition(localSelf);
+            } else {
+                ballNode.setWorldPosition(selfPos);
+            }
         }
 
         ballNode.getComponent(Ball)!.setBullet(true);
         //console.log(ballNode.getComponent(Ball)!.BallColor);
         // 记录到数组中进行移动控制
         this.activeBalls.push({ node: ballNode, dir: dir });
+        GameAudio.playShoot();
 
         // 发射后立即随机并生成下一个预览球体
         this.spawnPreview();
@@ -198,5 +255,8 @@ export class control extends Component {
     onDestroy() {
         input.off(Input.EventType.MOUSE_MOVE, this.setMousePos, this);
         input.off(Input.EventType.MOUSE_DOWN, this.shootBall, this);
+        input.off(Input.EventType.TOUCH_MOVE, this.setTouchPos, this);
+        input.off(Input.EventType.TOUCH_START, this.setTouchPos, this);
+        input.off(Input.EventType.TOUCH_END, this.shootTouchBall, this);
     }
 }
